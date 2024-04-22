@@ -1,21 +1,11 @@
-import { css } from "@pigment-css/react";
+import { Header } from "@/landing-page/Header";
+import { Hero } from "@/landing-page/Hero";
 
 export default function Home() {
   return (
     <main>
-      <div>
-        <p>
-          Get started by editing&nbsp;
-          <code
-            className={css(({ theme }) => ({
-              fontWeight: 700,
-              fontSize: theme.vars.typography.h1.fontSize,
-            }))}
-          >
-            src/app/page.tsx
-          </code>
-        </p>
-      </div>
+      <Header />
+      <Hero />
     </main>
   );
 }

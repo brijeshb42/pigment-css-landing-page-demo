@@ -1,20 +1,71 @@
-import type {} from "@pigment-css/react/theme";
 import type { ExtendTheme } from "@pigment-css/react/theme";
-import { Breakpoints } from "@mui/system";
+import type { Breakpoints, Shape } from "@mui/system";
+import type { CSSObject } from "@emotion/css";
+
+interface CustomTheme {
+  typography: {
+    h1: CSSObject;
+    button: CSSObject;
+    pxToRem(pixels: number): string;
+  };
+  zIndex: {
+    appBar: number;
+  };
+  palette: {
+    divider: string;
+    text: {
+      primary: string;
+      primaryChannel: string;
+    };
+    background: {
+      default: string;
+    };
+    primary: {
+      main: string;
+      contrastText: string;
+      light: string;
+    };
+    info: {
+      light: string;
+      mainChannel: string;
+      main: string;
+    };
+    action: {
+      hoverOpacity: string | number;
+    };
+    common: {
+      white: string;
+    };
+    grey: {
+      200: string;
+      300: string;
+      "300Channel": string;
+      700: string;
+    };
+  };
+  breakpoints: Breakpoints;
+  mixins: Recors<string, CSSObject>;
+  shape: Shape;
+}
 
 declare module "@pigment-css/react/theme" {
   export interface ThemeArgs {
     theme: ExtendTheme<{
       colorScheme: "light" | "dark";
-      tokens: {
-        typography: {
-          h1: {
-            fontSize: string;
-          };
-        };
-      };
+      tokens: CustomTheme;
     }> & {
       breakpoints: Breakpoints;
     };
+  }
+}
+
+declare module "@emotion/react" {
+  export interface Theme extends CustomTheme {
+    vars: CustomTheme;
+    applyStyles: (
+      colorScheme: string,
+      style: CSSObject
+    ) => Record<string, CSSObject>;
+    spacing: (space: number) => number | string;
   }
 }

@@ -10,18 +10,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@mui/system": "next",
-    "@pigment-css/react": "next",
+    "@pigment-css/react": "0.0.9",
     "next": "14.2.1",
     "react": "^18",
-    "react-dom": "^18",
-    "react-resizable-panels": "^2.0.17"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "@pigment-css/nextjs-plugin": "next",
+    "@mui/material": "^5.15.15",
+    "@pigment-css/nextjs-plugin": "0.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "lodash": "^4.17.21",
     "typescript": "^5"
   }
 }
