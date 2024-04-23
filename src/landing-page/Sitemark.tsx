@@ -14,9 +14,8 @@ export function Sitemark() {
         fill: "currentcolor",
         flexShrink: 0,
         fontSize: "1.5rem",
-        marginInlineEnd: 16,
         width: 100,
-        height: 19,
+        height: 24,
       })}
     >
       <path
