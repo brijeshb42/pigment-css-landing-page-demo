@@ -1,4 +1,5 @@
 import type { ExtendTheme } from "@pigment-css/react/theme";
+import type { ThemeArgs } from "@pigment-css/react/theme";
 import type { Breakpoints, Shape } from "@mui/system";
 import type { CSSObject } from "@emotion/css";
 
@@ -6,6 +7,7 @@ interface CustomTheme {
   typography: {
     h1: CSSObject;
     button: CSSObject;
+    caption: CSSObject;
     pxToRem(pixels: number): string;
   };
   zIndex: {
@@ -14,6 +16,7 @@ interface CustomTheme {
   palette: {
     divider: string;
     text: {
+      secondary: string;
       primary: string;
       primaryChannel: string;
     };
@@ -24,6 +27,7 @@ interface CustomTheme {
       main: string;
       contrastText: string;
       light: string;
+      dark: string;
     };
     info: {
       light: string;

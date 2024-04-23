@@ -1,5 +1,4 @@
 import Box from "@pigment-css/react/Box";
-
 import { styled } from "@/lib/styled";
 import { Sitemark } from "./Sitemark";
 

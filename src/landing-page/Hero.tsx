@@ -1,5 +1,5 @@
-import { css } from "@/lib/styled";
 import Box from "@pigment-css/react/Box";
+import { css, styled } from "@/lib/styled";
 
 const visuallyHidden = css({
   border: 0,
@@ -13,21 +13,45 @@ const visuallyHidden = css({
   width: "1px",
 });
 
+const Link = styled("a")(({ theme }) => ({
+  position: "relative",
+  color: theme.vars.palette.primary.main,
+  textDecoration: "none",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    width: 0,
+    height: 1,
+    bottom: 0,
+    left: 0,
+    backgroundColor: theme.vars.palette.primary.light,
+    opacity: 0.7,
+    transition: "width 0.3s ease, opacity 0.3s ease",
+  },
+  "&:hover": {
+    "&::before": {
+      width: "100%",
+      opacity: 1,
+    },
+  },
+  ...theme.applyStyles("dark", {
+    color: theme.vars.palette.primary.light,
+  }),
+}));
+
 export function Hero() {
   return (
     <Box
       as="div"
       id="hero"
-      sx={({ theme }) => ({
+      className={css(({ theme }) => ({
         width: "100%",
-        backgroundImage:
-          "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)",
+        backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -20%, ${theme.vars.palette.info.main}, transparent)`,
         backgroundRepeat: "no-repeat",
         ...theme.applyStyles("dark", {
-          backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)",
+          backgroundImage: `radial-gradient(ellipse 80% 50% at 50% -20%, ${theme.vars.palette.primary.dark}, transparent)`,
         }),
-      })}
+      }))}
     >
       {/* @ts-expect-error */}
       <Box
@@ -132,17 +156,21 @@ export function Hero() {
                 borderColor: theme.vars.palette.grey[700],
                 transition: "border-color 120ms ease-in",
                 "&:focus": {
-                  borderColor: (theme.vars || theme).palette.primary.main,
                   borderWidth: 1,
-                  outline: `3px solid ${theme.vars.palette.grey[700]}`,
                   outlineOffset: 2,
+                  borderColor: (theme.vars || theme).palette.primary.main,
+                  outline: `3px solid ${theme.vars.palette.primary.main}`,
                 },
                 ...theme.applyStyles("dark", {
-                  borderColor: "hsla(220, 25%, 80%, 0.8)",
+                  "&:focus": {
+                    borderColor: (theme.vars || theme).palette.primary.main,
+                    outlineColor: (theme.vars || theme).palette.primary.main,
+                  },
                 }),
               })}
             />
             <button
+              type="button"
               className={css(({ theme }) => ({
                 ...theme.typography.button,
                 appearance: "none",
@@ -170,6 +198,23 @@ export function Hero() {
             >
               Start now
             </button>
+          </Box>
+
+          <Box
+            as="p"
+            sx={({ theme }) => ({
+              ...theme.typography.caption,
+              margin: 0,
+              fontWeight: 400,
+              color: theme.vars.palette.text.secondary,
+              textAlign: "center",
+              ...theme.applyStyles("dark", {
+                color: theme.vars.palette.text.primary,
+              }),
+            })}
+          >
+            By clicking &quot;Start now&quot; you agree to our&nbsp;
+            <Link href="#">Terms & Conditions</Link>.
           </Box>
         </Box>
       </Box>

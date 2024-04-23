@@ -2,8 +2,14 @@ import { createRequire } from "module";
 import { withPigment, extendTheme } from "@pigment-css/nextjs-plugin";
 import { createBreakpoints } from "@mui/system";
 
+const isEmotion = process.env.EMOTION === "1";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  env: {
+    EMOTION: isEmotion ? "1" : "0",
+  },
+};
 
 const darkModePalette = {
   primary: {
@@ -413,4 +419,7 @@ const pigmentConfig = {
   },
 };
 
-export default withPigment(nextConfig, pigmentConfig);
+// This doesn't work yet
+const exp = isEmotion ? nextConfig : withPigment(nextConfig, pigmentConfig);
+
+export default exp;

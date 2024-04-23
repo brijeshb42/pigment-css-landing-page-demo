@@ -25,6 +25,7 @@ const baseTheme: Theme["vars"] = {
       lineHeight: 1.75,
       scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
+    caption: {},
     pxToRem(pixels) {
       return `${pixels / 16}rem`;
     },
@@ -32,6 +33,7 @@ const baseTheme: Theme["vars"] = {
   palette: {
     divider: "",
     text: {
+      secondary: "",
       primary: "",
       primaryChannel: "",
     },
@@ -39,6 +41,7 @@ const baseTheme: Theme["vars"] = {
       default: "",
     },
     primary: {
+      dark: "",
       main: "",
       contrastText: "",
       light: "",
@@ -83,7 +86,7 @@ const baseTheme: Theme["vars"] = {
   },
 };
 
-const theme: Theme = {
+export const theme: Theme = {
   vars: baseTheme,
   ...baseTheme,
   applyStyles(scheme, obj) {

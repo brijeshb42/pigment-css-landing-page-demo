@@ -7,12 +7,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:emotion": "EMOTION=1 next build"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
     "@emotion/css": "^11.11.2",
     "@emotion/react": "^11.11.4",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.5",
+    "@mui/material-nextjs": "next",
     "@mui/system": "next",
     "@pigment-css/react": "0.0.9",
     "next": "14.2.1",
