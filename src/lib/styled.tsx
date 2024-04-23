@@ -1,8 +1,7 @@
 import { css as baseCss } from "@emotion/css";
 import { Theme } from "@emotion/react";
-import { createBreakpoints } from "@mui/system";
-
 export { default as styled } from "@emotion/styled";
+import { createBreakpoints } from "@mui/system";
 
 type BaseCssArg = Parameters<typeof baseCss>;
 type CssArg =
@@ -19,8 +18,6 @@ const baseTheme: Theme["vars"] = {
       textTransform: "initial",
       fontWeight: 700,
       letterSpacing: 0,
-      fontFamily:
-        '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
       fontSize: "0.875rem",
       lineHeight: 1.75,
       scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
