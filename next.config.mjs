@@ -176,7 +176,7 @@ const theme = extendTheme({
     fontWeightBold: 700,
     h1: {
       fontSize: "clamp(2.5rem, 1.125rem + 3.5vw, 3.5em)",
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 1.2,
       letterSpacing: -0.2,
     },

@@ -74,15 +74,15 @@ export function Hero() {
       <Box
         sx={{
           p: 4,
-          width: { xs: "100%", sm: "70%" },
+          width: { xs: "100%", sm: "50%" },
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 2,
+          gap: 2.5,
         }}
       >
         <H1 sx={{ flexDirection: { xs: "column", sm: "row" } }}>
-          Our&nbsp;latest&nbsp;
+          The&nbsp;
           <Box
             as="span"
             sx={({ theme }) => ({
@@ -93,8 +93,9 @@ export function Hero() {
               }),
             })}
           >
-            products
+            best product
           </Box>
+          &nbsp;release
         </H1>
         {/* @ts-expect-error */}
         <Box
@@ -102,7 +103,7 @@ export function Hero() {
           sx={({ theme }) => ({
             ...theme.vars.typography.body1,
             color: theme.vars.palette.text.secondary,
-            width: { sm: "100%", md: "80%" },
+            maxWidth: 750,
             textAlign: "center",
           })}
         >
