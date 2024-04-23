@@ -12,10 +12,6 @@ html {
   box-sizing: "inherit";
 }
 
-:root {
-  color-scheme: light;
-}
-
 strong,
 b {
   font-weight: var(--typography-fontWeightBold);
@@ -23,19 +19,17 @@ b {
 
 body {
   margin: 0;
+  padding: 0;
   color: var(--palette-text-primary);
-  /* Include typography */
-  background-color: var(--palette-background-default);
+  background-color: var(--palette-background-lvl1);
 }
 
-@media print {
-  body {
-    background-color: var(--palette-common-white);
-  }
-}
-
-body::backdrop {
+/* body::backdrop {
   background-color: var(--palette-background-default);
+} */
+
+:root {
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
