@@ -63,7 +63,7 @@ const darkModeColorTokens = {
   },
   text: {
     primary: "hsl(220, 100%, 100%)",
-    secondary: "hsl(220, 20%, 85%)",
+    secondary: "hsl(220, 20%, 65%)",
     disabled: "rgba(255, 255, 255, 0.5)",
     icon: "rgba(255, 255, 255, 0.5)",
   },
@@ -254,7 +254,7 @@ const theme = extendTheme({
       letterSpacing: 0,
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontWeight: 400,
+      fontWeight: 500,
       scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     caption: {

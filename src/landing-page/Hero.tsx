@@ -2,8 +2,9 @@ import Box from "@pigment-css/react/Box";
 import { css, styled } from "@/lib/styled";
 import { Button } from "./components/Button";
 import { Input } from "./components/Input";
+import { Link } from "./components/Link";
 
-const visuallyHidden = css({
+export const visuallyHidden = css({
   border: 0,
   clip: "rect(0 0 0 0)",
   height: "1px",
@@ -14,32 +15,6 @@ const visuallyHidden = css({
   whiteSpace: "nowrap",
   width: "1px",
 });
-
-const Link = styled.a(({ theme }) => ({
-  position: "relative",
-  color: theme.vars.palette.primary.main,
-  textDecoration: "none",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    width: 0,
-    height: 1,
-    bottom: 0,
-    left: 0,
-    backgroundColor: theme.vars.palette.primary.light,
-    opacity: 0.7,
-    transition: "width 0.3s ease, opacity 0.3s ease",
-  },
-  "&:hover": {
-    "&::before": {
-      width: "100%",
-      opacity: 1,
-    },
-  },
-  ...theme.applyStyles("dark", {
-    color: theme.vars.palette.primary.light,
-  }),
-}));
 
 const HeroWrapper = styled.section(({ theme }) => ({
   margin: "0 auto",

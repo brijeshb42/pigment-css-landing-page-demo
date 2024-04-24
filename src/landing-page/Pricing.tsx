@@ -10,7 +10,7 @@ type Tier = {
   price: string;
   description: string[];
   buttonText: string;
-  buttonVariant: string;
+  buttonVariant: "outlined" | "contained";
   subheader?: string;
 };
 
@@ -137,22 +137,30 @@ function TierCard({
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                py: "2px",
-                px: 1,
-                color: (theme.vars || theme).palette.text.primary,
+                p: "2px 8px",
                 borderRadius: 16,
+                gap: 1,
                 whiteSpace: "nowrap",
                 borderColor: "hsla(220, 60%, 99%, 0.3)",
                 backgroundColor: "hsla(220, 60%, 99%, 0.1)",
-                "& .MuiChip-label": {
-                  color: "hsl(0, 0%, 16.470588235294116%)",
-                },
-                "& .MuiChip-icon": {
-                  color: "primary.light",
-                },
+                ...theme.applyStyles("dark", {
+                  color: (theme.vars || theme).palette.text.primary,
+                }),
               })}
             >
-              {subheader}
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                width={18}
+                height={18}
+                data-testid="AutoAwesomeIcon"
+                className={css({
+                  fill: "var(--palette-common-white)",
+                })}
+              >
+                <path d="m19 9 1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25z" />
+              </svg>
+              <span>{subheader}</span>
             </Box>
           )}
         </Box>
@@ -218,9 +226,12 @@ function TierCard({
       <Button
         size="large"
         fullWidth
-        variant={buttonVariant as "outlined" | "contained"}
+        variant={buttonVariant}
+        color="primary"
         sx={{
+          mt: 2,
           borderRadius: "12px",
+          color: title !== "Professional" ? "primary.light" : "common.white",
         }}
       >
         {buttonText}

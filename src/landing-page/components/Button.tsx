@@ -47,7 +47,7 @@ export const Button = styled("button", {
     {
       props: { variant: "outlined" },
       style: {
-        border: `1px solid ${theme.vars.palette.divider}`,
+        border: `1px solid ${theme.vars.palette.primary.main}`,
         "&:hover": {
           backgroundColor: theme.vars.palette.grey[50],
           borderColor: theme.vars.palette.divider,
@@ -78,7 +78,6 @@ export const Button = styled("button", {
         fullWidth: true,
       },
       style: {
-        width: "100%",
         display: "block",
         textAlign: "center",
       },
