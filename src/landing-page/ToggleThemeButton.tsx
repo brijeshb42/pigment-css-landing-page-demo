@@ -4,12 +4,16 @@ import { LightModeIcon } from "./components/LightModeIcon";
 import { DarkModeIcon } from "./components/DarkModeIcon";
 
 export function ToggleThemeButton() {
-  const currentTheme = cookies().get("theme")?.value || "light";
+  const currentTheme = cookies().get("theme")?.value || "dark";
 
   async function toggleTheme() {
     "use server";
-    const theme = cookies().get("theme")?.value || "light";
-    cookies().set("theme", theme === "light" ? "dark" : "light");
+    const theme = cookies().get("theme")?.value || "dark";
+    if (theme === "light") {
+      cookies().delete("theme");
+    } else {
+      cookies().set("theme", "light");
+    }
   }
 
   return (

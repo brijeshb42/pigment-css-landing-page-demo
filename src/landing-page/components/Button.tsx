@@ -16,6 +16,10 @@ export const Button = styled("button", {
   alignItems: "center",
   borderRadius: "999px",
   transition: "all 80ms ease-in",
+  "&:focus-visible": {
+    outline: `3px solid ${theme.vars.palette.primary.main}`,
+    outlineOffset: 2,
+  },
   variants: [
     ...(["primary", "info"] as const).map((colorPaletteKey) => ({
       props: {
