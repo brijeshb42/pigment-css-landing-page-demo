@@ -1,7 +1,11 @@
 import { styled } from "@/lib/styled";
 
-export const Button = styled.button<{
-  color: "primary";
+export const Button = styled("button", {
+  shouldForwardProp(propName) {
+    return !["color", "variant"].includes(propName);
+  },
+})<{
+  color?: "primary";
   variant: "outlined" | "contained";
   size: "medium" | "large";
 }>(({ theme }) => ({
@@ -13,6 +17,14 @@ export const Button = styled.button<{
   borderRadius: "999px",
   transition: "all 80ms ease-in",
   variants: [
+    ...(["primary", "info"] as const).map((colorPaletteKey) => ({
+      props: {
+        color: colorPaletteKey,
+      },
+      style: {
+        color: theme.vars.palette[colorPaletteKey].main,
+      },
+    })),
     {
       props: { size: "medium" },
       style: {

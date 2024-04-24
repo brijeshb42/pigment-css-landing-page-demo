@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
 import "@pigment-css/react/styles.css";
 import "./globals.css";
@@ -15,9 +16,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = cookies().get("theme")?.value || "light";
   return (
-    <html lang="en">
-      <head></head>
+    <html lang="en" className={theme}>
       <body className={inter.className}>{children}</body>
     </html>
   );

@@ -30,12 +30,10 @@ body {
   background-color: var(--palette-background-default);
 } */
 
-:root {
+.light {
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
+.dark {
+  color-scheme: dark;
 }

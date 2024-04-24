@@ -8,6 +8,7 @@ interface CustomTheme {
     h1: CSSObject;
     button: CSSObject;
     caption: CSSObject;
+    body1: CSSObject;
     pxToRem(pixels: number): string;
   };
   zIndex: {
@@ -21,7 +22,8 @@ interface CustomTheme {
       primaryChannel: string;
     };
     background: {
-      default: string;
+      lvl1: string;
+      lvl2: string;
     };
     primary: {
       main: string;
@@ -41,10 +43,14 @@ interface CustomTheme {
       white: string;
     };
     grey: {
+      50: string;
+      100: string;
       200: string;
       300: string;
       "300Channel": string;
       700: string;
+      800: string;
+      900: string;
     };
   };
   breakpoints: Breakpoints;

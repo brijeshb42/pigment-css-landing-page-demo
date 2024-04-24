@@ -319,9 +319,9 @@ const theme = extendTheme({
   shouldSkipGeneratingVar(keys) {
     return ["breakpoints", "mixins", "transitions"].includes(keys[0]);
   },
-  getColorSchemeSelector(scheme) {
+  getSelector(scheme) {
     if (scheme === "dark") {
-      return "@media (prefers-color-scheme: dark)";
+      return ".dark";
     }
     return ":root";
   },

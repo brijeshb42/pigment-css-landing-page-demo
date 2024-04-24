@@ -2,6 +2,7 @@ import Box from "@pigment-css/react/Box";
 import { styled } from "@/lib/styled";
 import { Button } from "./components/Button";
 import { Sitemark } from "./Sitemark";
+import { ToggleThemeButton } from "./ToggleThemeButton";
 
 const HeaderWrapper = styled.header(({ theme }) => ({
   boxSizing: "border-box", // Prevent padding issue with the Modal and fixed positioned AppBar.
@@ -64,7 +65,6 @@ export function Header() {
   return (
     <HeaderWrapper>
       <Toolbar>
-        {/* @ts-expect-error */}
         <Box
           as="div"
           sx={{
@@ -91,6 +91,7 @@ export function Header() {
             gap: 0.5,
           }}
         >
+          <ToggleThemeButton />
           <Button color="primary" variant="outlined" size="medium">
             Sign in
           </Button>

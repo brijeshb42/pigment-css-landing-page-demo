@@ -23,6 +23,7 @@ const baseTheme: Theme["vars"] = {
       scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     caption: {},
+    body1: {},
     pxToRem(pixels) {
       return `${pixels / 16}rem`;
     },
@@ -35,7 +36,8 @@ const baseTheme: Theme["vars"] = {
       primaryChannel: "",
     },
     background: {
-      default: "",
+      lvl1: "",
+      lvl2: "",
     },
     primary: {
       dark: "",
@@ -52,10 +54,14 @@ const baseTheme: Theme["vars"] = {
       hoverOpacity: 0.08,
     },
     grey: {
+      50: "",
+      100: "",
       200: "",
       300: "",
       "300Channel": "",
       700: "",
+      800: "",
+      900: "",
     },
     common: {
       white: "",

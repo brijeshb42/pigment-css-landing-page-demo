@@ -65,6 +65,7 @@ export function Hero() {
   return (
     <HeroWrapper
       id="hero"
+      // @ts-expect-error
       sx={{
         pt: { xs: 14, sm: 20 },
         pb: { xs: 8, sm: 12 },
@@ -81,6 +82,7 @@ export function Hero() {
           gap: 2.5,
         }}
       >
+        {/* @ts-expect-error */}
         <H1 sx={{ flexDirection: { xs: "column", sm: "row" } }}>
           The&nbsp;
           <Box
@@ -97,7 +99,6 @@ export function Hero() {
           </Box>
           &nbsp;release
         </H1>
-        {/* @ts-expect-error */}
         <Box
           as="p"
           sx={({ theme }) => ({
