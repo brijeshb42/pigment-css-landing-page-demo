@@ -86,7 +86,8 @@ export function Header() {
         <Box
           sx={{
             display: { xs: "none", md: "flex" },
-            gap: 0.5,
+            alignItems: "center",
+            gap: 1,
           }}
         >
           <ToggleThemeButton />

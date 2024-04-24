@@ -1,9 +1,10 @@
 import Box from "@pigment-css/react/Box";
+import { css } from "@/lib/styled";
 import { Container } from "./components/Container";
 import { Card } from "./components/Card";
-import { css } from "@/lib/styled";
 import { Divider } from "./components/Divider";
 import { Button } from "./components/Button";
+import { Typography } from "./components/Typography";
 
 type Tier = {
   title: string;
@@ -223,17 +224,7 @@ function TierCard({
           </Box>
         </Box>
       ))}
-      <Button
-        size="large"
-        fullWidth
-        variant={buttonVariant}
-        color="primary"
-        sx={{
-          mt: 2,
-          borderRadius: "12px",
-          color: title !== "Professional" ? "primary.light" : "common.white",
-        }}
-      >
+      <Button size="large" variant={buttonVariant} color="primary" fullWidth>
         {buttonText}
       </Button>
     </Card>
@@ -242,45 +233,22 @@ function TierCard({
 
 export function Pricing() {
   return (
-    <Container
-      id="pricing"
-      sx={{
-        pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: { xs: 3, sm: 6 },
-      }}
-    >
+    <Container id="pricing">
       <Box
         sx={{
           width: { sm: "100%", md: "60%" },
           textAlign: { sm: "left", md: "center" },
         }}
       >
-        <Box
-          component="h2"
-          sx={({ theme }) => ({
-            ...theme.typography.h4,
-            color: theme.vars.palette.text.primary,
-          })}
-        >
+        <Typography as="h2" variant="h4">
           Pricing
-        </Box>
-        <Box
-          as="p"
-          sx={({ theme }) => ({
-            ...theme.typography.body1,
-            color: theme.vars.palette.text.secondary,
-          })}
-        >
+        </Typography>
+        <Typography variant="body1" color="secondary">
           Quickly build an effective pricing table for your potential customers
           with this layout. <br />
           It&apos;s built with default Material UI components with little
           customization.
-        </Box>
+        </Typography>
       </Box>
       <Box
         sx={{

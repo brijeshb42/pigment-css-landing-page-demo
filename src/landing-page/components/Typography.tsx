@@ -1,9 +1,10 @@
 import { styled } from "@/lib/styled";
 
 export const Typography = styled("p")<{
-  variant?: string;
+  color?: "primary" | "secondary" | "disabled";
+  fontWeight?: "regular" | "medium" | "semibold" | "bold";
   gutterBottom?: boolean;
-  fontWeight?: "regular" | "medium" | "bold" | "semibold";
+  variant?: string;
 }>(({ theme }) => ({
   variants: [
     ...Object.keys(theme.typography)
@@ -25,13 +26,20 @@ export const Typography = styled("p")<{
         marginBottom: "0.35em",
       },
     },
+    ...(["primary", "secondary", "disabled"] as const).map((color) => ({
+      props: {
+        color: color,
+      },
+      style: {
+        color: theme.vars.palette.text[color],
+      },
+    })),
     ...(["regular", "medium", "bold", "semibold"] as const).map((weight) => ({
       props: {
         fontWeight: weight,
       },
       style: {
-        fontWeight:
-          theme.vars.typography[`fontWeight${weight[0]}${weight.slice(1)}`],
+        fontWeight: theme.vars.typography[`fontWeight${weight}`],
       },
     })),
   ],

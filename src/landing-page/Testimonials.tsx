@@ -1,6 +1,8 @@
 import Box from "@pigment-css/react/Box";
 import { styled } from "@/lib/styled";
 import { Avatar } from "@/landing-page/components/Avatar";
+import { Container } from "@/landing-page/components/Container";
+import { Typography } from "@/landing-page/components/Typography";
 
 const userTestimonials = [
   {
@@ -90,46 +92,21 @@ const Card = styled.div(({ theme }) => ({
 
 export function Testimonials() {
   return (
-    <Box
-      id="testimonials"
-      sx={{
-        pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: { xs: 3, sm: 6 },
-      }}
-    >
+    <Container id="testimonials">
       <Box
         sx={{
           width: { sm: "100%", md: "60%" },
           textAlign: { sm: "left", md: "center" },
         }}
       >
-        <Box
-          component="h2"
-          sx={({ theme }) => ({
-            ...theme.vars.typography.h4,
-            color: theme.vars.palette.text.primary,
-          })}
-        >
+        <Typography as="h2" variant="h4">
           Testimonials
-        </Box>
-        <Box
-          as="p"
-          sx={({ theme }) => ({
-            ...theme.vars.typography.body1,
-            color: theme.vars.palette.text.secondary,
-            maxWidth: 750,
-            textAlign: "center",
-          })}
-        >
+        </Typography>
+        <Typography variant="body1" color="secondary">
           See what our customers love about our products. Discover how we excel
           in efficiency, durability, and satisfaction. Join us for quality,
           innovation, and reliable support.
-        </Box>
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -168,6 +145,6 @@ export function Testimonials() {
           </Card>
         ))}
       </Box>
-    </Box>
+    </Container>
   );
 }

@@ -1,7 +1,6 @@
 import { Button } from "./components/Button";
 import { cookies } from "next/headers";
-import { LightModeIcon } from "./components/LightModeIcon";
-import { DarkModeIcon } from "./components/DarkModeIcon";
+import { LightModeIcon, DarkModeIcon } from "./components/Icons";
 
 export function ToggleThemeButton() {
   const currentTheme = cookies().get("theme")?.value || "dark";
@@ -18,21 +17,7 @@ export function ToggleThemeButton() {
 
   return (
     <form action={toggleTheme}>
-      <Button
-        type="submit"
-        variant="outlined"
-        color="primary"
-        size="medium"
-        sx={{
-          display: "flex",
-          width: 32,
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 0,
-          border: "none",
-          borderRadius: "999px",
-        }}
-      >
+      <Button type="submit" variant="plain" size="medium" sx={{ width: 32 }}>
         {currentTheme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
       </Button>
     </form>

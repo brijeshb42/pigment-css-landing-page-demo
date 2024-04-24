@@ -164,16 +164,15 @@ const theme = extendTheme({
     pxToRem(val) {
       return `${val / 16}rem`;
     },
-    fontFamilyCode: 'Menlo,Consolas,"Droid Sans Mono",monospace',
     allVariants: {
       scrollMarginTop: "calc(116px + 32px)",
     },
     htmlFontSize: 16,
     fontSize: 14,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
-    fontWeightSemiBold: 600,
-    fontWeightBold: 700,
+    fontWeightRegular: "400",
+    fontWeightMedium: "500",
+    fontWeightSemiBold: "600",
+    fontWeightBold: "700",
     h1: {
       fontSize: "clamp(2.5rem, 1.125rem + 3.5vw, 3.5em)",
       fontWeight: 500,

@@ -2,19 +2,21 @@ import { styled } from "@/lib/styled";
 
 export const Button = styled("button", {
   shouldForwardProp(propName) {
-    return !["color", "variant", "fullWidth"].includes(propName);
+    return !["color", "variant", "size", "fullWidth"].includes(propName);
   },
 })<{
   color?: "primary";
-  variant: "outlined" | "contained";
+  variant: "plain" | "outlined" | "contained";
   size: "medium" | "large";
   fullWidth?: boolean;
 }>(({ theme }) => ({
   all: "unset",
   userSelect: "none",
+  boxSizing: "border-box",
   cursor: "pointer",
   display: "inline-flex",
   alignItems: "center",
+  justifyContent: "center",
   borderRadius: "999px",
   transition: "all 80ms ease-in",
   "&:focus-visible": {
@@ -34,26 +36,45 @@ export const Button = styled("button", {
       props: { size: "medium" },
       style: {
         height: theme.spacing(4),
-        paddingInline: theme.spacing(1.2),
+        padding: theme.spacing(1.2),
       },
     },
     {
       props: { size: "large" },
       style: {
         height: theme.spacing(5),
-        paddingInline: theme.spacing(1.5),
+        padding: theme.spacing(1.5),
       },
     },
     {
       props: { variant: "outlined" },
       style: {
-        border: `1px solid ${theme.vars.palette.primary.main}`,
+        border: "1px solid",
+        borderColor: theme.vars.palette.grey[300],
+        color: theme.vars.palette.primary.dark,
         "&:hover": {
           backgroundColor: theme.vars.palette.grey[50],
-          borderColor: theme.vars.palette.divider,
+          borderColor: theme.vars.palette.grey[400],
         },
         ...theme.applyStyles("dark", {
-          color: theme.vars.palette.grey[200],
+          color: theme.vars.palette.primary.light,
+          borderColor: theme.vars.palette.grey[700],
+          "&:hover": {
+            backgroundColor: theme.vars.palette.grey[800],
+            borderColor: theme.vars.palette.grey[600],
+          },
+        }),
+      },
+    },
+    {
+      props: { variant: "plain" },
+      style: {
+        color: theme.vars.palette.primary.dark,
+        "&:hover": {
+          backgroundColor: theme.vars.palette.grey[50],
+        },
+        ...theme.applyStyles("dark", {
+          color: theme.vars.palette.primary.light,
           "&:hover": {
             backgroundColor: theme.vars.palette.grey[800],
           },
@@ -63,10 +84,10 @@ export const Button = styled("button", {
     {
       props: { variant: "contained" },
       style: {
+        color: theme.vars.palette.grey[50],
         backgroundColor: theme.vars.palette.primary.main,
         backgroundImage:
           "linear-gradient(to bottom, hsla(210, 100%, 60%, 0.8), hsl(210, 100%, 40%))",
-        color: theme.vars.palette.grey[50],
         "&:hover": {
           backgroundColor: theme.vars.palette.primary.dark,
           backgroundImage: "none",
@@ -74,11 +95,9 @@ export const Button = styled("button", {
       },
     },
     {
-      props: {
-        fullWidth: true,
-      },
+      props: { fullWidth: true },
       style: {
-        display: "block",
+        width: "100%",
         textAlign: "center",
       },
     },

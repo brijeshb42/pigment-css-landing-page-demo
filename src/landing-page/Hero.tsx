@@ -3,6 +3,7 @@ import { css, styled } from "@/lib/styled";
 import { Button } from "./components/Button";
 import { Input } from "./components/Input";
 import { Link } from "./components/Link";
+import { Typography } from "@/landing-page/components/Typography";
 
 export const visuallyHidden = css({
   border: 0,
@@ -29,13 +30,6 @@ const HeroWrapper = styled.section(({ theme }) => ({
   }),
 }));
 
-const H1 = styled.h1(({ theme }) => ({
-  margin: 0,
-  display: "flex",
-  alignItems: "center",
-  ...theme.vars.typography.h1,
-}));
-
 export function Hero() {
   return (
     <HeroWrapper
@@ -55,7 +49,15 @@ export function Hero() {
           gap: 2.5,
         }}
       >
-        <H1 sx={{ flexDirection: { xs: "column", sm: "row" } }}>
+        <Typography
+          variant="h1"
+          color="primary"
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" },
+            alignItems: "center",
+          }}
+        >
           The&nbsp;
           <Box
             as="span"
@@ -67,23 +69,19 @@ export function Hero() {
               }),
             })}
           >
-            best product
+            best&nbsp;product
           </Box>
           &nbsp;release
-        </H1>
-        <Box
-          as="p"
-          sx={({ theme }) => ({
-            ...theme.vars.typography.body1,
-            color: theme.vars.palette.text.secondary,
-            maxWidth: 750,
-            textAlign: "center",
-          })}
+        </Typography>
+        <Typography
+          variant="body1"
+          color="secondary"
+          sx={{ maxWidth: 750, textAlign: { sm: "left", md: "center" } }}
         >
           Explore our cutting-edge dashboard, delivering high-quality solutions
           tailored to your needs. Elevate your experience with top-tier features
           and services.
-        </Box>
+        </Typography>
         <Box
           as="form"
           action="#"
@@ -119,18 +117,15 @@ export function Hero() {
             Start now
           </Button>
         </Box>
-        <Box
-          as="p"
-          sx={({ theme }) => ({
-            ...theme.vars.typography.caption,
-            fontWeight: 400,
-            color: theme.vars.palette.text.secondary,
-            textAlign: "center",
-          })}
+        <Typography
+          variant="caption"
+          color="secondary"
+          fontWeight="regular"
+          sx={{ maxWidth: 750 }}
         >
           By clicking &quot;Start now&quot; you agree to our&nbsp;
           <Link href="#">Terms & Conditions</Link>.
-        </Box>
+        </Typography>
       </Box>
     </HeroWrapper>
   );
