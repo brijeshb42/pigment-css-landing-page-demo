@@ -15,16 +15,7 @@ const WrappedLink = styled(Link)(({ theme }) => ({
 
 export function Footer() {
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
-        textAlign: { sm: "center", md: "left" },
-      }}
-    >
+    <Container>
       <Box
         sx={{
           display: "flex",
@@ -57,7 +48,6 @@ export function Footer() {
               <Box
                 as="label"
                 htmlFor="email-newsletter"
-                className={visuallyHidden}
                 sx={{
                   display: "block",
                   transformOrigin: "top left",
@@ -74,18 +64,8 @@ export function Footer() {
                 autoComplete="off"
                 aria-label="Enter your email address"
                 placeholder="Your email address"
-                sx={{
-                  display: "block",
-                  width: "100%",
-                  borderRadius: "12px",
-                }}
               />
-              <Button
-                variant="contained"
-                color="primary"
-                size="medium"
-                sx={{ flexShrink: 0, borderRadius: "12px" }}
-              >
+              <Button variant="contained" color="primary" size="large">
                 Subscribe
               </Button>
             </Stack>

@@ -27,13 +27,14 @@ const Toolbar = styled.nav(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+  backgroundColor: "hsl(0, 100%, 100%, 0.8)",
   borderRadius: "999px",
-  backgroundColor: theme.vars.palette.background.lvl2,
   border: `1px solid ${theme.vars.palette.divider}`,
   backdropFilter: "blur(24px)",
   boxShadow: "0 8px 24px hsla(210, 100%, 80%, 0.1)",
   ...theme.applyStyles("dark", {
     boxShadow: "0 8px 24px hsla(210, 100%, 25%, 0.1)",
+    backgroundColor: theme.vars.palette.background.lvl2,
   }),
 }));
 

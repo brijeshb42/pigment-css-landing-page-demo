@@ -50,10 +50,10 @@ export const Button = styled("button", {
       props: { variant: "outlined" },
       style: {
         border: "1px solid",
-        borderColor: theme.vars.palette.grey[300],
+        borderColor: theme.vars.palette.divider,
         color: theme.vars.palette.primary.dark,
         "&:hover": {
-          backgroundColor: theme.vars.palette.grey[50],
+          backgroundColor: theme.vars.palette.grey[100],
           borderColor: theme.vars.palette.grey[400],
         },
         ...theme.applyStyles("dark", {

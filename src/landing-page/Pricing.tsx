@@ -170,40 +170,20 @@ function TierCard({
         sx={{
           display: "flex",
           alignItems: "baseline",
-          color: title === "Professional" ? "grey.50" : undefined,
+          color: title === "Professional" ? "white" : "primary",
         }}
       >
-        <Box
-          sx={({ theme }) => ({
-            ...theme.typography.h2,
-            color: title !== "Professional" ? "text.primary" : undefined,
-          })}
-        >
-          ${price}
-        </Box>
-        <Box
-          sx={({ theme }) => ({
-            ...theme.typography.h6,
-          })}
-        >
-          &nbsp; per month
-        </Box>
+        <Typography variant="h2">${price}</Typography>
+        <Typography variant="h6">&nbsp; per month</Typography>
       </Box>
-      <Divider
-        sx={{
-          my: 2,
-          opacity: 0.8,
-          borderColor: "divider",
-        }}
-      />
+      <Divider />
       {description.map((line) => (
         <Box
           key={line}
           sx={{
-            py: 1,
             display: "flex",
-            gap: 1.5,
             alignItems: "center",
+            gap: 1.5,
           }}
         >
           <CheckCircleRoundedIcon
@@ -213,15 +193,12 @@ function TierCard({
                 : "var(--palette-primary-main)"
             }
           />
-          <Box
-            component={"span"}
-            sx={({ theme }) => ({
-              ...theme.typography.subtitle2,
-              color: title === "Professional" ? "grey.50" : undefined,
-            })}
+          <Typography
+            variant="body2"
+            sx={{ color: title === "Professional" ? "white" : undefined }}
           >
             {line}
-          </Box>
+          </Typography>
         </Box>
       ))}
       <Button size="large" variant={buttonVariant} color="primary" fullWidth>
