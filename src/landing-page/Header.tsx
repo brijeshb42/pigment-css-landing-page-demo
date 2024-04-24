@@ -75,7 +75,6 @@ export function Header() {
           }}
         >
           <Sitemark />
-          {/* @ts-expect-error */}
           <Box as="nav" sx={{ display: { xs: "none", md: "flex" } }}>
             <NavItem href="#features">Features</NavItem>
             <NavItem href="#testimonials">Testimonials</NavItem>
@@ -84,7 +83,6 @@ export function Header() {
             <NavItem href="#faq">FAQ</NavItem>
           </Box>
         </Box>
-        {/* @ts-expect-error */}
         <Box
           sx={{
             display: { xs: "none", md: "flex" },

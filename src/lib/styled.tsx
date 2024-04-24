@@ -1,6 +1,5 @@
 import { css as baseCss } from "@emotion/css";
 import { Theme } from "@emotion/react";
-export { default as styled } from "@emotion/styled";
 import { createBreakpoints } from "@mui/system";
 
 type BaseCssArg = Parameters<typeof baseCss>;
@@ -14,6 +13,9 @@ const baseTheme: Theme["vars"] = {
       fontSize: "1.6rem",
       fontWeight: 700,
     },
+    h2: {},
+    h4: {},
+    h6: {},
     button: {
       textTransform: "initial",
       fontWeight: 700,
@@ -24,6 +26,8 @@ const baseTheme: Theme["vars"] = {
     },
     caption: {},
     body1: {},
+    subtitle2: {},
+    fontFamily: "",
     pxToRem(pixels) {
       return `${pixels / 16}rem`;
     },
@@ -51,6 +55,7 @@ const baseTheme: Theme["vars"] = {
       mainChannel: "rgba(48, 58, 80, 0.3)",
     },
     action: {
+      selected: "",
       hoverOpacity: 0.08,
     },
     grey: {
@@ -108,3 +113,4 @@ export function css(...args: CssArg[]) {
   );
   return baseCss(...newArgs);
 }
+export { styled } from "@pigment-css/react";

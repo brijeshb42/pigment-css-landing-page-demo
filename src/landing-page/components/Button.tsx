@@ -2,12 +2,13 @@ import { styled } from "@/lib/styled";
 
 export const Button = styled("button", {
   shouldForwardProp(propName) {
-    return !["color", "variant"].includes(propName);
+    return !["color", "variant", "fullWidth"].includes(propName);
   },
 })<{
   color?: "primary";
   variant: "outlined" | "contained";
   size: "medium" | "large";
+  fullWidth?: boolean;
 }>(({ theme }) => ({
   all: "unset",
   userSelect: "none",
@@ -70,6 +71,16 @@ export const Button = styled("button", {
           backgroundColor: theme.vars.palette.primary.dark,
           backgroundImage: "none",
         },
+      },
+    },
+    {
+      props: {
+        fullWidth: true,
+      },
+      style: {
+        width: "100%",
+        display: "block",
+        textAlign: "center",
       },
     },
   ],

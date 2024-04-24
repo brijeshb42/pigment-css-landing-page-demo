@@ -6,9 +6,14 @@ import type { CSSObject } from "@emotion/css";
 interface CustomTheme {
   typography: {
     h1: CSSObject;
+    h2: CSSObject;
+    h4: CSSObject;
+    h6: CSSObject;
+    subtitle2: CSSObject;
     button: CSSObject;
     caption: CSSObject;
     body1: CSSObject;
+    fontFamily: string;
     pxToRem(pixels: number): string;
   };
   zIndex: {
@@ -38,6 +43,7 @@ interface CustomTheme {
     };
     action: {
       hoverOpacity: string | number;
+      selected: string;
     };
     common: {
       white: string;

@@ -65,13 +65,11 @@ export function Hero() {
   return (
     <HeroWrapper
       id="hero"
-      // @ts-expect-error
       sx={{
         pt: { xs: 14, sm: 20 },
         pb: { xs: 8, sm: 12 },
       }}
     >
-      {/* @ts-expect-error */}
       <Box
         sx={{
           p: 4,
@@ -82,7 +80,6 @@ export function Hero() {
           gap: 2.5,
         }}
       >
-        {/* @ts-expect-error */}
         <H1 sx={{ flexDirection: { xs: "column", sm: "row" } }}>
           The&nbsp;
           <Box
@@ -112,7 +109,6 @@ export function Hero() {
           tailored to your needs. Elevate your experience with top-tier features
           and services.
         </Box>
-        {/* @ts-expect-error */}
         <Box
           as="form"
           action="#"

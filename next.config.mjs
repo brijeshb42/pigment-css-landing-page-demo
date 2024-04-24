@@ -183,7 +183,7 @@ const theme = extendTheme({
     h2: {
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontSize: "clamp(1.5rem, 0.9643rem + 1.4286vw, 2.25rem)",
+      fontSize: "3rem",
       fontWeight: 600,
       lineHeight: 1.2222222222222223,
       letterSpacing: -0.2,
@@ -202,7 +202,7 @@ const theme = extendTheme({
     h4: {
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontSize: "1.875rem",
+      fontSize: "2.25rem",
       lineHeight: 1.5,
       letterSpacing: 0.2,
       fontWeight: 400,
@@ -219,7 +219,7 @@ const theme = extendTheme({
       scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     h6: {
-      fontSize: "1.25rem",
+      fontSize: "1.125rem",
       lineHeight: 1.5,
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',

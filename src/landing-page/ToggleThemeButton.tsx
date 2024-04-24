@@ -23,7 +23,6 @@ export function ToggleThemeButton() {
         variant="outlined"
         color="primary"
         size="medium"
-        // @ts-expect-error
         sx={{
           display: "flex",
           width: 32,
