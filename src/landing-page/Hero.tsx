@@ -153,8 +153,8 @@ export function Hero() {
           alt="Product UI"
           src={
             isDarkMode
-              ? "/static/images/templates/templates-images/hero-dark.png"
-              : "/static/images/templates/templates-images/hero-light.png"
+              ? "/static/images/templates/templates-images/hero-light.png"
+              : "/static/images/templates/templates-images/hero-dark.png"
           }
         />
       </Box>
