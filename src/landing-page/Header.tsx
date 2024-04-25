@@ -99,7 +99,7 @@ document.addEventListener('click', (ev) => {
             gap: 1,
           }}
         >
-          <a href="/">
+          <a aria-label="Sitemark" href="/">
             <Sitemark />
           </a>
           <Box as="nav" sx={{ display: { xs: "none", md: "flex" } }}>

@@ -145,6 +145,7 @@ export function Testimonials() {
                 </Box>
                 <img
                   width={64}
+                  alt={testimonial.occupation}
                   className={css({ opacity: 0.3 })}
                   src={isDarkMode ? whiteLogos[index] : darkLogos[index]}
                 />
