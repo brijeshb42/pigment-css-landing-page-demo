@@ -7,9 +7,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pigment CSS Demo Landing Page",
+  title: "Pigment CSS Demo",
   description:
-    "A demo that showcases various ways to style your web apps using Pigment CSS.",
+    "A demo that showcases how to style your app with Pigment CSS in multiple ways.",
 };
 
 export default function RootLayout({
@@ -20,6 +20,7 @@ export default function RootLayout({
   const theme = cookies().get("theme")?.value || "dark";
   return (
     <html lang="en" className={theme}>
+      <link rel="shortcut icon" href="/static/favicon.ico" />
       <body className={inter.className}>{children}</body>
     </html>
   );
