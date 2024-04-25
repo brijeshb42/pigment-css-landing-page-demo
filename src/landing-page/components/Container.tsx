@@ -10,8 +10,8 @@ export const Container = styled.div(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   gap: theme.spacing(1.5),
-  paddingLeft: theme.spacing(2),
-  paddingRight: theme.spacing(2),
+  paddingLeft: theme.spacing(3),
+  paddingRight: theme.spacing(3),
   paddingTop: theme.spacing(0.5),
   paddingBottom: theme.spacing(1),
   [theme.breakpoints.up("sm")]: {

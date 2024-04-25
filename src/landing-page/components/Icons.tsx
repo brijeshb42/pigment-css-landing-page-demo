@@ -80,3 +80,32 @@ export function QueryStatsRoundedIcon(props: React.HTMLProps<"svg">) {
     </svg>
   );
 }
+
+export function Sparkles(props: React.HTMLProps<"svg">) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      width={18}
+      height={18}
+      style={{ fill: "currentColor" }}
+    >
+      <path d="m19 9 1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25z" />
+    </svg>
+  );
+}
+
+export function CheckCircleRoundedIcon(props: any) {
+  return (
+    <svg
+      focusable="false"
+      aria-hidden="true"
+      width={20}
+      height={20}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2M9.29 16.29 5.7 12.7a.996.996 0 0 1 0-1.41c.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0" />
+    </svg>
+  );
+}

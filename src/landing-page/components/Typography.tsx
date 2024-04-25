@@ -34,7 +34,7 @@ export const Typography = styled("p")<{
         color: theme.vars.palette.text[color],
       },
     })),
-    ...(["regular", "medium", "bold", "semibold"] as const).map((weight) => ({
+    ...(["regular", "medium", "semibold", "bold"] as const).map((weight) => ({
       props: {
         fontWeight: weight,
       },

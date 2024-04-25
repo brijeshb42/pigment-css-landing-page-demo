@@ -10,9 +10,9 @@ export const Input = styled.input(({ theme }) => ({
   border: `1px solid ${theme.vars.palette.divider}`,
   transition: "all 80ms ease-in",
   fontSize: "1rem",
-  backgroundColor: theme.vars.palette.grey[50],
+  backgroundColor: "#FFF",
   "&:hover": {
-    backgroundColor: theme.vars.palette.grey[100],
+    backgroundColor: theme.vars.palette.grey[50],
   },
   "&:focus": {
     outlineOffset: 2,

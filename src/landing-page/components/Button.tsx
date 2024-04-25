@@ -58,7 +58,7 @@ export const Button = styled("button", {
         },
         ...theme.applyStyles("dark", {
           color: theme.vars.palette.primary.light,
-          borderColor: theme.vars.palette.grey[700],
+          borderColor: theme.vars.palette.grey[800],
           "&:hover": {
             backgroundColor: theme.vars.palette.grey[800],
             borderColor: theme.vars.palette.grey[600],
@@ -98,7 +98,6 @@ export const Button = styled("button", {
       props: { fullWidth: true },
       style: {
         width: "100%",
-        textAlign: "center",
       },
     },
   ],

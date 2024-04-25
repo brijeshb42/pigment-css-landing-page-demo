@@ -1,6 +1,6 @@
+import React from "react";
 import { styled } from "@/lib/styled";
 import { Typography } from "./Typography";
-import React from "react";
 
 const LinkRoot = styled.a<React.HTMLProps<"a">>(({ theme }) => ({
   position: "relative",
