@@ -39,7 +39,12 @@ export const Typography = styled("p")<{
         fontWeight: weight,
       },
       style: {
-        fontWeight: theme.vars.typography[`fontWeight${weight}`],
+        fontWeight:
+          theme.vars.typography[
+            `fontWeight${weight[0].toUpperCase()}${weight
+              .slice(1)
+              .toUpperCase()}`
+          ],
       },
     })),
   ],

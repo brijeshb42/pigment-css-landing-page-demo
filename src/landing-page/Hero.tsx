@@ -3,7 +3,7 @@ import { css, styled } from "@/lib/styled";
 import { Button } from "./components/Button";
 import { Input } from "./components/Input";
 import { Link } from "./components/Link";
-import { Typography } from "@/landing-page/components/Typography";
+import { Typography } from "./components/Typography";
 
 export const visuallyHidden = css({
   border: 0,

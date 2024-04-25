@@ -167,6 +167,7 @@ const theme = extendTheme({
     allVariants: {
       scrollMarginTop: "calc(116px + 32px)",
     },
+    fontFamilyCode: 'Menlo,Consolas,"Droid Sans Mono",monospace',
     htmlFontSize: 16,
     fontSize: 14,
     fontWeightRegular: "400",
@@ -187,7 +188,6 @@ const theme = extendTheme({
       lineHeight: 1.2222222222222223,
       letterSpacing: -0.2,
       color: "hsl(215, 15%, 92%)",
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     h3: {
       fontFamily:
@@ -196,7 +196,6 @@ const theme = extendTheme({
       lineHeight: 1.2222222222222223,
       letterSpacing: 0.2,
       fontWeight: 400,
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     h4: {
       fontFamily:
@@ -205,7 +204,6 @@ const theme = extendTheme({
       lineHeight: 1.5,
       letterSpacing: 0.2,
       fontWeight: 400,
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     h5: {
       fontSize: "1.5rem",
@@ -215,7 +213,6 @@ const theme = extendTheme({
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
       fontWeight: 400,
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     h6: {
       fontSize: "1.125rem",
@@ -223,7 +220,6 @@ const theme = extendTheme({
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
       fontWeight: 500,
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     button: {
       textTransform: "initial",
@@ -239,7 +235,6 @@ const theme = extendTheme({
       fontWeight: 500,
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     body1: {
       fontSize: "1rem",
@@ -253,8 +248,7 @@ const theme = extendTheme({
       letterSpacing: 0,
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontWeight: 500,
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
+      fontWeight: 400,
     },
     caption: {
       display: "inline-block",
@@ -264,7 +258,6 @@ const theme = extendTheme({
       fontWeight: 700,
       fontFamily:
         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     subtitle2: {
       fontFamily:
@@ -272,7 +265,6 @@ const theme = extendTheme({
       fontWeight: 500,
       fontSize: "0.875rem",
       lineHeight: 1.57,
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     overline: {
       fontFamily:
@@ -281,7 +273,6 @@ const theme = extendTheme({
       fontSize: "0.75rem",
       lineHeight: 2.66,
       textTransform: "uppercase",
-      scrollMarginTop: "calc(var(--MuiDocs-header-height) + 32px)",
     },
     inherit: {
       fontFamily: "inherit",

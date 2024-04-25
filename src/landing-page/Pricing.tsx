@@ -108,7 +108,7 @@ function TierCard({
       }`}
     >
       <Box
-        sx={({ theme }) => ({
+        sx={{
           mb: 1,
           display: "flex",
           justifyContent: "space-between",
@@ -116,7 +116,7 @@ function TierCard({
           gap: 2,
           width: "100%",
           color: title === "Professional" ? "grey.100" : undefined,
-        })}
+        }}
       >
         <Box
           component="h3"
@@ -173,7 +173,17 @@ function TierCard({
           color: title === "Professional" ? "white" : "primary",
         }}
       >
-        <Typography variant="h2">${price}</Typography>
+        <Typography
+          variant="h2"
+          color="primary"
+          className={
+            title === "Professional"
+              ? css(({ theme }) => ({ color: theme.vars.palette.common.white }))
+              : undefined
+          }
+        >
+          ${price}
+        </Typography>
         <Typography variant="h6">&nbsp; per month</Typography>
       </Box>
       <Divider />
@@ -201,9 +211,11 @@ function TierCard({
           </Typography>
         </Box>
       ))}
-      <Button size="large" variant={buttonVariant} color="primary" fullWidth>
-        {buttonText}
-      </Button>
+      <Box sx={{ mt: 2 }}>
+        <Button size="large" variant={buttonVariant} color="primary" fullWidth>
+          {buttonText}
+        </Button>
+      </Box>
     </Card>
   );
 }

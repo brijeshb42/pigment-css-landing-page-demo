@@ -9,7 +9,7 @@ import { Button } from "./components/Button";
 import { Link } from "./components/Link";
 import { styled } from "@/lib/styled";
 
-const WrappedLink = styled(Link)(({ theme }) => ({
+const WrappedLink = styled(Link)<{ variant?: string }>(({ theme }) => ({
   color: theme.vars.palette.text.secondary,
 }));
 
