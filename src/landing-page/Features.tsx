@@ -116,19 +116,8 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
                 {item.description}
               </Typography>
               <div>
-                <Link
-                  color="primary"
-                  href="//mui.com"
-                  target="_blank"
-                  // @ts-expect-error
-                  sx={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    "& > svg": { transition: "0.2s" },
-                    "&:hover > svg": { transform: "translateX(2px)" },
-                  }}
-                >
-                  <span>Learn more</span>
+                <Link color="primary" href="/">
+                  Learn more
                 </Link>
               </div>
             </FeatureCard>
