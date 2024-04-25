@@ -7,12 +7,16 @@ interface CustomTheme {
   typography: {
     h1: CSSObject;
     h2: CSSObject;
+    h3: CSSObject;
     h4: CSSObject;
+    h5: CSSObject;
     h6: CSSObject;
-    subtitle2: CSSObject;
     button: CSSObject;
-    caption: CSSObject;
+    subtitle: CSSObject;
     body1: CSSObject;
+    body2: CSSObject;
+    caption: CSSObject;
+    overline: CSSObject;
     fontFamily: string;
     pxToRem(pixels: number): string;
   };
@@ -20,16 +24,6 @@ interface CustomTheme {
     appBar: number;
   };
   palette: {
-    divider: string;
-    text: {
-      secondary: string;
-      primary: string;
-      primaryChannel: string;
-    };
-    background: {
-      lvl1: string;
-      lvl2: string;
-    };
     primary: {
       main: string;
       contrastText: string;
@@ -41,22 +35,28 @@ interface CustomTheme {
       mainChannel: string;
       main: string;
     };
-    action: {
-      hoverOpacity: string | number;
-      selected: string;
-    };
-    common: {
-      white: string;
-    };
     grey: {
       50: string;
       100: string;
       200: string;
       300: string;
-      "300Channel": string;
       700: string;
       800: string;
       900: string;
+    };
+    divider: string;
+    text: {
+      secondary: string;
+      primary: string;
+      primaryChannel: string;
+    };
+    background: {
+      plain: string;
+      lvl1: string;
+      lvl2: string;
+    };
+    common: {
+      white: string;
     };
   };
   breakpoints: Breakpoints;

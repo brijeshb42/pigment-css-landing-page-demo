@@ -40,27 +40,10 @@ const darkModeColorTokens = {
     dark: "hsl(210, 100%, 21%)",
     contrastText: "hsl(210, 100%, 65%)",
   },
-  warning: {
-    light: "hsl(45, 90%, 40%)",
-    main: "hsl(45, 90%, 35%)",
-    dark: "hsl(45, 94%, 20%)",
-    contrastText: "#fff",
-  },
-  error: {
-    light: "hsl(0, 90%, 40%)",
-    main: "hsl(0, 90%, 30%)",
-    dark: "hsl(0, 94%, 20%)",
-    contrastText: "#fff",
-  },
-  success: {
-    light: "hsl(120, 44%, 53%)",
-    main: "hsl(120, 59%, 30%)",
-    dark: "hsl(120, 75%, 16%)",
-    contrastText: "#fff",
-  },
   grey: greyPalette,
   divider: "hsla(220, 25%, 35%, 0.3)",
   background: {
+    plain: "hsl(220, 20%, 2%)",
     lvl1: "hsl(220, 30%, 3%, 0.8)",
     lvl2: "hsl(220, 30%, 5%, 0.8)",
   },
@@ -74,14 +57,6 @@ const darkModeColorTokens = {
     black: "#000",
     white: "#fff",
   },
-  secondary: {
-    main: "#ce93d8",
-    light: "#f3e5f5",
-    dark: "#ab47bc",
-    contrastText: "rgba(0, 0, 0, 0.87)",
-  },
-  contrastThreshold: 3,
-  tonalOffset: 0.2,
 };
 
 const lightModeColorTokens = {
@@ -97,61 +72,25 @@ const lightModeColorTokens = {
     dark: "hsl(210, 98%, 55%)",
     contrastText: "hsl(220, 60%, 99%)",
   },
-  warning: {
-    light: "hsl(45, 90%, 65%)",
-    main: "hsl(45, 90%, 40%)",
-    dark: "hsl(45, 95%, 16%)",
-    contrastText: "rgba(0, 0, 0, 0.87)",
-  },
-  error: {
-    light: "hsl(0, 90%, 65%)",
-    main: "hsl(0, 90%, 40%)",
-    dark: "hsl(0, 95%, 16%)",
-    contrastText: "#fff",
-  },
-  success: {
-    light: "hsl(120, 61%, 77%)",
-    main: "hsl(120, 44%, 53%)",
-    dark: "hsl(120, 84%, 10%)",
-    contrastText: "rgba(0, 0, 0, 0.87)",
-  },
   grey: greyPalette,
-  divider: "hsla(220, 25%, 80%, 0.8)",
+  divider: "hsla(220, 25%, 80%, 0.6)",
   background: {
-    lvl1: "hsl(220, 30%, 97%, 0.8)",
-    lvl2: "hsl(220, 30%, 94%, 0.8)",
+    plain: "white",
+    lvl1: "hsl(220, 30%, 97%, 0.6)",
+    lvl2: "hsl(220, 30%, 96%, 0.4)",
   },
   text: {
     primary: "hsl(220, 25%, 10%)",
     secondary: "hsl(220, 25%, 35%)",
     disabled: "rgba(0, 0, 0, 0.38)",
   },
-  action: {
-    selected: "hsla(210, 100%, 80%, 0.2)",
-    active: "rgba(0, 0, 0, 0.54)",
-    hover: "rgba(0, 0, 0, 0.04)",
-    hoverOpacity: 0.04,
-    selectedOpacity: 0.08,
-    disabled: "rgba(0, 0, 0, 0.26)",
-    disabledBackground: "rgba(0, 0, 0, 0.12)",
-    disabledOpacity: 0.38,
-    focus: "rgba(0, 0, 0, 0.12)",
-    focusOpacity: 0.12,
-    activatedOpacity: 0.12,
-  },
   common: {
     black: "#000",
     white: "#fff",
   },
-  secondary: {
-    main: "#9c27b0",
-    light: "#ba68c8",
-    dark: "#7b1fa2",
-    contrastText: "#fff",
-  },
-  contrastThreshold: 3,
-  tonalOffset: 0.2,
 };
+
+const fontFamily = `"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`;
 
 const theme = extendTheme({
   colorSchemes: {
@@ -170,7 +109,6 @@ const theme = extendTheme({
     allVariants: {
       scrollMarginTop: "calc(116px + 32px)",
     },
-    fontFamilyCode: 'Menlo,Consolas,"Droid Sans Mono",monospace',
     htmlFontSize: 16,
     fontSize: 14,
     fontWeightRegular: "400",
@@ -178,66 +116,60 @@ const theme = extendTheme({
     fontWeightSemiBold: "600",
     fontWeightBold: "700",
     h1: {
+      fontFamily: fontFamily,
       fontSize: "clamp(2.5rem, 1.125rem + 3.5vw, 3.5em)",
       fontWeight: 500,
       lineHeight: 1.2,
       letterSpacing: -0.2,
     },
     h2: {
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: fontFamily,
       fontSize: "3rem",
-      fontWeight: 600,
-      lineHeight: 1.2222222222222223,
+      fontWeight: 500,
+      lineHeight: 1.2,
       letterSpacing: -0.2,
       color: "hsl(215, 15%, 92%)",
     },
     h3: {
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: fontFamily,
       fontSize: "2.25rem",
-      lineHeight: 1.2222222222222223,
+      fontWeight: 500,
+      lineHeight: 1.2,
       letterSpacing: 0.2,
-      fontWeight: 400,
     },
     h4: {
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: fontFamily,
       fontSize: "2.25rem",
+      fontWeight: 500,
       lineHeight: 1.5,
       letterSpacing: 0.2,
-      fontWeight: 400,
     },
     h5: {
+      fontFamily: fontFamily,
       fontSize: "1.5rem",
+      fontWeight: 500,
       lineHeight: 1.5,
       letterSpacing: 0.1,
-      color: "hsl(210, 100%, 70%)",
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontWeight: 400,
     },
     h6: {
+      fontFamily: fontFamily,
       fontSize: "1.125rem",
-      lineHeight: 1.5,
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
       fontWeight: 500,
+      lineHeight: 1.5,
     },
     button: {
       textTransform: "initial",
-      fontWeight: 500,
+      fontWeight: 600,
       fontSize: "0.875rem",
       letterSpacing: 0,
       lineHeight: 1.75,
     },
-    subtitle1: {
+    subtitle: {
       fontSize: "1.125rem",
-      lineHeight: 1.3333333333333333,
-      letterSpacing: 0,
       fontWeight: 500,
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      lineHeight: 1.5,
+      letterSpacing: 0,
+      fontFamily: fontFamily,
     },
     body1: {
       fontSize: "1rem",
@@ -246,32 +178,21 @@ const theme = extendTheme({
       letterSpacing: 0,
     },
     body2: {
+      fontFamily: fontFamily,
       fontSize: "0.875rem",
+      fontWeight: 400,
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontWeight: 400,
     },
     caption: {
-      display: "inline-block",
+      fontFamily: fontFamily,
       fontSize: "0.75rem",
+      fontWeight: 700,
       lineHeight: 1.5,
       letterSpacing: 0,
-      fontWeight: 700,
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-    },
-    subtitle2: {
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-      fontWeight: 500,
-      fontSize: "0.875rem",
-      lineHeight: 1.57,
     },
     overline: {
-      fontFamily:
-        '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+      fontFamily: fontFamily,
       fontWeight: 400,
       fontSize: "0.75rem",
       lineHeight: 2.66,
@@ -284,19 +205,6 @@ const theme = extendTheme({
       lineHeight: "inherit",
       letterSpacing: "inherit",
     },
-  },
-  mixins: {
-    // toolbar: {
-    //   minHeight: 56,
-    //   "@media (min-width:0px)": {
-    //     "@media (orientation: landscape)": {
-    //       minHeight: 48,
-    //     },
-    //   },
-    //   "@media (min-width:600px)": {
-    //     minHeight: 64,
-    //   },
-    // },
   },
   zIndex: {
     mobileStepper: 1000,

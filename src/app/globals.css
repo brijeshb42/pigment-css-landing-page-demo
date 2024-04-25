@@ -23,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--palette-text-primary);
-  background-color: var(--palette-background-lvl1);
+  background-color: var(--palette-background-plain);
 }
 
 /* body::backdrop {
