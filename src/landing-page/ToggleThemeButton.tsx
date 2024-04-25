@@ -17,9 +17,27 @@ export function ToggleThemeButton() {
 
   return (
     <form action={toggleTheme}>
-      <Button type="submit" variant="plain" size="medium" sx={{ width: 32 }}>
+      <Button
+        id="toggle-theme"
+        type="submit"
+        variant="plain"
+        size="medium"
+        sx={{ width: 32 }}
+      >
         {currentTheme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
       </Button>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+  const btn = document.getElementById('toggle-theme');
+  const currentTheme = ${JSON.stringify(currentTheme)};
+  btn.addEventListener('click', () => {
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(currentTheme === 'light' ?  'dark' : 'light');
+  });
+`,
+        }}
+      />
     </form>
   );
 }

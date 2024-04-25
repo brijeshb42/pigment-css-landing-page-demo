@@ -4,6 +4,7 @@ import { Button } from "./components/Button";
 import { Input } from "./components/Input";
 import { Link } from "./components/Link";
 import { Typography } from "./components/Typography";
+import { cookies } from "next/headers";
 
 export const visuallyHidden = css({
   border: 0,
@@ -30,7 +31,7 @@ const HeroWrapper = styled.section(({ theme }) => ({
   }),
 }));
 
-const StyledBox = styled("div")(({ theme }) => ({
+const StyledImg = styled("img")(({ theme }) => ({
   alignSelf: "center",
   width: "100%",
   height: 400,
@@ -38,23 +39,21 @@ const StyledBox = styled("div")(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
   outline: "1px solid",
-  backgroundImage:
-    "url(/static/images/templates/templates-images/hero-light.png)",
   outlineColor: "hsla(220, 25%, 80%, 0.5)",
   backgroundSize: "cover",
+  maxWidth: 949,
   [theme.breakpoints.up("sm")]: {
     marginTop: theme.spacing(10),
     height: 700,
   },
   ...theme.applyStyles("dark", {
     boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
-    backgroundImage:
-      "url(/static/images/templates/templates-images/hero-dark.png)",
     outlineColor: "hsla(210, 100%, 80%, 0.1)",
   }),
 }));
 
 export function Hero() {
+  const isDarkMode = cookies().get("theme")?.value ?? "dark" === "dark";
   return (
     <HeroWrapper
       id="hero"
@@ -150,7 +149,14 @@ export function Hero() {
           By clicking &quot;Start now&quot; you agree to our&nbsp;
           <Link href="#">Terms & Conditions</Link>.
         </Typography>
-        <StyledBox />
+        <StyledImg
+          alt="Product UI"
+          src={
+            isDarkMode
+              ? "/static/images/templates/templates-images/hero-dark.png"
+              : "/static/images/templates/templates-images/hero-light.png"
+          }
+        />
       </Box>
     </HeroWrapper>
   );
