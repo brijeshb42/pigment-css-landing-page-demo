@@ -65,6 +65,30 @@ const NavItem = styled.a(({ theme }) => ({
 export function Header() {
   return (
     <HeaderWrapper>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+document.addEventListener('click', (ev) => {
+  const el = ev.target;
+  if (!el.classList.contains('nav-item')) {
+    return;
+  }
+  ev.preventDefault();
+  const sectionElement = document.querySelector(el.getAttribute('href'));
+  if (!sectionElement) {
+    return;
+  }
+  const offset = 128;
+  const targetScroll = sectionElement.offsetTop - offset;
+  sectionElement.scrollIntoView({ behavior: 'smooth' });
+  window.scrollTo({
+    top: targetScroll,
+    behavior: 'smooth',
+  });
+});
+      `,
+        }}
+      />
       <Toolbar>
         <Box
           as="div"
@@ -77,11 +101,21 @@ export function Header() {
         >
           <Sitemark />
           <Box as="nav" sx={{ display: { xs: "none", md: "flex" } }}>
-            <NavItem href="#features">Features</NavItem>
-            <NavItem href="#testimonials">Testimonials</NavItem>
-            <NavItem href="#highlights">Highlights</NavItem>
-            <NavItem href="#pricing">Pricing</NavItem>
-            <NavItem href="#faq">FAQ</NavItem>
+            <NavItem className="nav-item" href="#features">
+              Features
+            </NavItem>
+            <NavItem className="nav-item" href="#testimonials">
+              Testimonials
+            </NavItem>
+            {/* <NavItem className="nav-item" href="#highlights">
+              Highlights
+            </NavItem> */}
+            <NavItem className="nav-item" href="#pricing">
+              Pricing
+            </NavItem>
+            {/* <NavItem className="nav-item" href="#faq">
+              FAQ
+            </NavItem> */}
           </Box>
         </Box>
         <Box
