@@ -116,9 +116,6 @@ document.addEventListener('click', (ev) => {
             <NavItem className="nav-item" href="#pricing">
               Pricing
             </NavItem>
-            {/* <NavItem className="nav-item" href="#faq">
-              FAQ
-            </NavItem> */}
           </Box>
         </Box>
         <Box

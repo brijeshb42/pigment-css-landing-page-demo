@@ -1,5 +1,5 @@
 import Box from "@pigment-css/react/Box";
-import { css } from "@/lib/styled";
+import { css, theme } from "@/lib/styled";
 import { Container } from "./components/Container";
 import { Card } from "./components/Card";
 import { Divider } from "./components/Divider";
@@ -76,6 +76,7 @@ function TierCard({
         flexGrow: 1,
         flexShrink: 0,
         gap: theme.spacing(2),
+        backgroundColor: theme.vars.palette.background.plain,
         borderRadius: theme.shape.borderRadius,
         [theme.breakpoints.down("sm")]: {
           width: "100%",
@@ -115,16 +116,21 @@ function TierCard({
           </Chip>
         )}
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "baseline",
-          gap: 1,
-          color: title === "Professional" ? "white" : "primary",
-        }}
-      >
-        <Typography variant="h2">${price}</Typography>
-        <Typography variant="h6">per month</Typography>
+      <Box sx={{ display: "flex", alignItems: "baseline", gap: 1 }}>
+        <Typography
+          variant="h2"
+          color="primary"
+          sx={{ color: title === "Professional" && "white" }}
+        >
+          ${price}
+        </Typography>
+        <Typography
+          variant="h6"
+          color="primary"
+          sx={{ color: title === "Professional" && "white" }}
+        >
+          per month
+        </Typography>
       </Box>
       <Divider sx={{ opacity: title === "Professional" ? 0.5 : 1 }} />
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>

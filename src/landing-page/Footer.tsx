@@ -41,8 +41,11 @@ export function Footer() {
               Subscribe for weekly updates. No spams ever!
             </Typography>
             <Stack
-              direction={{ xs: "column", sm: "row" }}
-              sx={{ gap: 1, alignItems: { xs: "start", sm: "end" } }}
+              sx={{
+                flexDirection: { xs: "column", sm: "row" },
+                alignItems: { xs: "start", sm: "end" },
+                gap: 1,
+              }}
             >
               <Stack
                 direction="column"
@@ -137,10 +140,9 @@ export function Footer() {
           <WrappedLink href="#">Contact</WrappedLink>
         </Box>
       </Box>
-      <Divider />
+      <Divider sx={{ my: 2 }} />
       <Box
         sx={{
-          pt: 4,
           width: "100%",
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },

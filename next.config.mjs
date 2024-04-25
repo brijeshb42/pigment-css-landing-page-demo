@@ -44,7 +44,7 @@ const darkModeColorTokens = {
   divider: "hsla(220, 25%, 35%, 0.3)",
   background: {
     plain: "hsl(220, 20%, 2%)",
-    lvl1: "hsl(220, 30%, 3%, 0.8)",
+    lvl1: "hsl(220, 30%, 3%, 1)",
     lvl2: "hsl(220, 30%, 5%, 0.8)",
   },
   text: {
@@ -76,7 +76,7 @@ const lightModeColorTokens = {
   divider: "hsla(220, 25%, 80%, 0.6)",
   background: {
     plain: "white",
-    lvl1: "hsl(220, 30%, 97%, 0.6)",
+    lvl1: "hsl(220, 30%, 98%, 0.4)",
     lvl2: "hsl(220, 30%, 96%, 0.4)",
   },
   text: {
