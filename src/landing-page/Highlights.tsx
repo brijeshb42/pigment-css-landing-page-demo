@@ -1,7 +1,7 @@
 import Box from "@pigment-css/react/Box";
 import { Card } from "./components/Card";
 import { Container } from "@/landing-page/components/Container";
-import { Typography } from "@/landing-page/components/Typography";
+import { Typography } from "./components/Typography";
 import {
   AutoFixHighRoundedIcon,
   ConstructionRoundedIcon,

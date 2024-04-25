@@ -1,9 +1,9 @@
+import { cookies } from "next/headers";
 import Box from "@pigment-css/react/Box";
 import { css } from "@/lib/styled";
 import { Card } from "./components/Card";
 import { Container } from "@/landing-page/components/Container";
-import { Typography } from "@/landing-page/components/Typography";
-import { cookies } from "next/headers";
+import { Typography } from "./components/Typography";
 
 const userTestimonials = [
   {

@@ -1,11 +1,11 @@
 import Box from "@pigment-css/react/Box";
-import { css, theme } from "@/lib/styled";
+import { css } from "@/lib/styled";
 import { Container } from "./components/Container";
 import { Card } from "./components/Card";
 import { Divider } from "./components/Divider";
 import { Button } from "./components/Button";
 import { Typography } from "./components/Typography";
-import { Chip } from "@/landing-page/components/Chip";
+import { Chip } from "./components/Chip";
 import { Sparkles, CheckCircleRoundedIcon } from "./components/Icons";
 
 type Tier = {
