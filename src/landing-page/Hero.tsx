@@ -53,7 +53,7 @@ const StyledImg = styled("img")(({ theme }) => ({
 }));
 
 export function Hero() {
-  const isDarkMode = cookies().get("theme")?.value ?? "dark" === "dark";
+  const isDarkMode = (cookies().get("theme")?.value || "dark") === "dark";
   return (
     <HeroWrapper
       id="hero"
@@ -153,8 +153,8 @@ export function Hero() {
           alt="Product UI"
           src={
             isDarkMode
-              ? "/static/images/templates/templates-images/hero-light.png"
-              : "/static/images/templates/templates-images/hero-dark.png"
+              ? "/static/images/templates/templates-images/hero-dark.png"
+              : "/static/images/templates/templates-images/hero-light.png"
           }
         />
       </Box>
