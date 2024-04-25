@@ -79,7 +79,6 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
   return (
     <Container
       id="features"
-      // @ts-expect-error
       sx={{
         gap: 6,
         alignItems: "stretch",
