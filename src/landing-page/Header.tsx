@@ -109,9 +109,9 @@ document.addEventListener('click', (ev) => {
             <NavItem className="nav-item" href="#testimonials">
               Testimonials
             </NavItem>
-            {/* <NavItem className="nav-item" href="#highlights">
+            <NavItem className="nav-item" href="#highlights">
               Highlights
-            </NavItem> */}
+            </NavItem>
             <NavItem className="nav-item" href="#pricing">
               Pricing
             </NavItem>
