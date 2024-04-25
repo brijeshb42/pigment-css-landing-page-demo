@@ -1,13 +1,13 @@
 import Box from "@pigment-css/react/Box";
+import { styled } from "@/lib/styled";
 import { Container } from "./components/Container";
 import SitemarkIcon from "./components/SiteMarkIcon";
 import { Typography } from "./components/Typography";
 import { Stack } from "./components/Stack";
-import { visuallyHidden } from "./Hero";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { Link } from "./components/Link";
-import { styled } from "@/lib/styled";
+import { Divider } from "./components/Divider";
 
 const WrappedLink = styled(Link)<{ variant?: string }>(({ theme }) => ({
   color: theme.vars.palette.text.secondary,
@@ -18,9 +18,9 @@ export function Footer() {
     <Container>
       <Box
         sx={{
+          width: "100%",
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
-          width: "100%",
           justifyContent: "space-between",
         }}
       >
@@ -34,37 +34,30 @@ export function Footer() {
         >
           <Box sx={{ width: { xs: "100%", sm: "60%" } }}>
             <SitemarkIcon />
-            <Typography
-              variant="body2"
-              gutterBottom
-              sx={{ mt: 2, fontWeight: 600 }}
-            >
+            <Typography variant="body2" sx={{ mt: 2, mb: 1 }}>
               Join the newsletter
             </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary", mb: 2 }}>
+            <Typography variant="body2" color="secondary" sx={{ mb: 2 }}>
               Subscribe for weekly updates. No spams ever!
             </Typography>
-            <Stack direction="row" sx={{ gap: 1, alignItems: "center" }}>
-              <Box
-                as="label"
-                htmlFor="email-newsletter"
-                sx={{
-                  display: "block",
-                  transformOrigin: "top left",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  maxWidth: "100%",
-                }}
-              >
-                Email
-              </Box>
-              <Input
-                id="email-newsletter"
-                autoComplete="off"
-                aria-label="Enter your email address"
-                placeholder="Your email address"
-              />
+            <Stack direction="row" sx={{ gap: 1, alignItems: "end" }}>
+              <Stack direction="column" sx={{}}>
+                <Typography
+                  as="label"
+                  htmlFor="email-newsletter"
+                  variant="body2"
+                  color="secondary"
+                  sx={{ mb: 0.5 }}
+                >
+                  Your email:
+                </Typography>
+                <Input
+                  id="email-newsletter"
+                  autoComplete="off"
+                  aria-label="Enter your email address"
+                  placeholder="Your email address"
+                />
+              </Stack>
               <Button variant="contained" color="primary" size="large">
                 Subscribe
               </Button>
@@ -78,12 +71,12 @@ export function Footer() {
             gap: 1,
           }}
         >
-          <Typography variant="body2" fontWeight="medium">
+          <Typography variant="body1" fontWeight="medium">
             Product
           </Typography>
-          <WrappedLink variant="body2" href="#">
+          <Link variant="h1" href="#">
             Features
-          </WrappedLink>
+          </Link>
           <WrappedLink variant="body2" href="#">
             Testimonials
           </WrappedLink>
@@ -132,28 +125,26 @@ export function Footer() {
           <WrappedLink href="#">Contact</WrappedLink>
         </Box>
       </Box>
+      <Divider />
       <Box
         sx={{
+          pt: 4,
+          width: "100%",
           display: "flex",
           justifyContent: "space-between",
-          pt: { xs: 4, sm: 8 },
-          width: "100%",
-          borderTop: "1px solid",
-          borderColor: "divider",
         }}
       >
-        <Box sx={{ display: "flex" }}>
-          <WrappedLink color="text.secondary" variant="body1" href="#">
+        <Box sx={{ display: "flex", gap: 0.5 }}>
+          <WrappedLink color="text.secondary" variant="body2" href="#">
             Privacy Policy
           </WrappedLink>
-          <Typography sx={{ mx: 0.5, opacity: 0.5 }}>&nbsp;•&nbsp;</Typography>
-          <WrappedLink color="text.secondary" variant="body1" href="#">
+          <Typography sx={{ mx: 0.5, opacity: 0.5 }}>•</Typography>
+          <WrappedLink color="text.secondary" variant="body2" href="#">
             Terms of Service
           </WrappedLink>
         </Box>
         <Typography variant="body2" sx={{ color: "text.secondary", mt: 1 }}>
-          {"Copyright © "}
-          <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+          Copyright ©&nbsp;<Link href="https://mui.com/">Sitemark</Link>&nbsp;
           {new Date().getFullYear()}
         </Typography>
       </Box>

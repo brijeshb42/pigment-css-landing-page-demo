@@ -24,10 +24,10 @@ const HeroWrapper = styled.section(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  backgroundImage: `radial-gradient(ellipse 100% 70% at 50% -20%, ${theme.vars.palette.primary.light}, transparent)`,
+  backgroundImage: `radial-gradient(ellipse 100% 30% at 50% -20%, ${theme.vars.palette.primary.light}, transparent)`,
   backgroundRepeat: "no-repeat",
   ...theme.applyStyles("dark", {
-    backgroundImage: `radial-gradient(ellipse 100% 70% at 50% -20%, ${theme.vars.palette.primary.dark}, transparent)`,
+    backgroundImage: `radial-gradient(ellipse 100% 40% at 50% -20%, ${theme.vars.palette.primary.dark}, transparent)`,
   }),
 }));
 
@@ -37,19 +37,18 @@ const StyledImg = styled("img")(({ theme }) => ({
   height: 400,
   marginTop: theme.spacing(8),
   borderRadius: theme.shape.borderRadius,
-  boxShadow: "0 0 12px 8px hsla(220, 25%, 80%, 0.2)",
-  outline: "1px solid",
-  outlineColor: "hsla(220, 25%, 80%, 0.5)",
+  boxShadow: "0 0 24px hsl(220, 100%, 95%)",
+  border: `1px solid ${theme.vars.palette.divider}`,
   backgroundSize: "cover",
-  maxWidth: 949,
+  objectFit: "cover",
+  objectPosition: "top",
+  ...theme.applyStyles("dark", {
+    boxShadow: "0 0 24px hsl(220, 100%, 35%, 0.2)",
+  }),
   [theme.breakpoints.up("sm")]: {
     marginTop: theme.spacing(10),
-    height: 700,
+    height: 600,
   },
-  ...theme.applyStyles("dark", {
-    boxShadow: "0 0 24px 12px hsla(210, 100%, 25%, 0.2)",
-    outlineColor: "hsla(210, 100%, 80%, 0.1)",
-  }),
 }));
 
 export function Hero() {
@@ -64,8 +63,10 @@ export function Hero() {
     >
       <Box
         sx={{
+          boxSizing: "border-box",
           p: 4,
-          width: { xs: "100%", sm: "50%" },
+          maxWidth: 1200,
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -140,12 +141,7 @@ export function Hero() {
             Start now
           </Button>
         </Box>
-        <Typography
-          variant="caption"
-          color="secondary"
-          fontWeight="regular"
-          sx={{ maxWidth: 750 }}
-        >
+        <Typography variant="caption" color="secondary" fontWeight="medium">
           By clicking &quot;Start now&quot; you agree to our&nbsp;
           <Link href="#">Terms & Conditions</Link>.
         </Typography>

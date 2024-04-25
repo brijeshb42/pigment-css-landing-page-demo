@@ -1,9 +1,8 @@
 import Box from "@pigment-css/react/Box";
-import { css, styled } from "@/lib/styled";
-import { Avatar } from "@/landing-page/components/Avatar";
+import { css } from "@/lib/styled";
+import { Card } from "./components/Card";
 import { Container } from "@/landing-page/components/Container";
 import { Typography } from "@/landing-page/components/Typography";
-import { Stack } from "./components/Stack";
 import { cookies } from "next/headers";
 
 const userTestimonials = [
@@ -69,23 +68,6 @@ const darkLogos = [
   "https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/655f5ca4e548b0deb1041c33_Ankara-black.svg",
 ];
 
-const logoStyle = {
-  width: "64px",
-  opacity: 0.3,
-};
-
-const Card = styled.div(({ theme }) => ({
-  padding: theme.spacing(2),
-  position: "relative",
-  display: "flex",
-  alignItems: "start",
-  justifyContent: "space-between",
-  borderRadius: theme.vars.shape.borderRadius,
-  backgroundColor: theme.vars.palette.background.lvl2,
-  border: `1px solid ${theme.vars.palette.divider}`,
-  ...theme.applyStyles("dark", {}),
-}));
-
 export function Testimonials() {
   const theme = cookies().get("theme")?.value || "dark";
   const isDarkMode = theme === "dark";
@@ -115,42 +97,36 @@ export function Testimonials() {
         }}
       >
         {userTestimonials.map((testimonial, index) => (
-          <Card key={index}>
-            <Stack
-              direction="column"
-              sx={{ height: "100%", justifyContent: "space-between" }}
-            >
-              <Box sx={{ paddingBottom: 2 }}>
-                <Typography variant="body2" color="secondary">
-                  {testimonial.testimonial}
+          <Card key={index} sx={{ display: "flex", flexDirection: "column" }}>
+            <Typography variant="body2" color="secondary" sx={{ mb: 2 }}>
+              {testimonial.testimonial}
+            </Typography>
+            <Box sx={{ display: "flex", gap: 2, mt: "auto" }}>
+              <img
+                src={testimonial.logo}
+                alt={testimonial.name}
+                height={40}
+                width={40}
+                className={css({
+                  borderRadius: 999,
+                })}
+              />
+              <div>
+                <Typography variant="body2" fontWeight="medium">
+                  {testimonial.name}
                 </Typography>
-              </Box>
-              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                <Box sx={{ display: "flex", gap: 2 }}>
-                  <img
-                    src={testimonial.logo}
-                    alt={testimonial.name}
-                    height={40}
-                    width={40}
-                    className={css({
-                      borderRadius: 999,
-                    })}
-                  />
-                  <div>
-                    <Typography variant="body2">{testimonial.name}</Typography>
-                    <Typography variant="body2" color="secondary">
-                      {testimonial.occupation}
-                    </Typography>
-                  </div>
-                </Box>
-                <img
-                  width={64}
-                  alt={testimonial.occupation}
-                  className={css({ opacity: 0.3 })}
-                  src={isDarkMode ? whiteLogos[index] : darkLogos[index]}
-                />
-              </Box>
-            </Stack>
+                <Typography variant="body2" color="secondary">
+                  {testimonial.occupation}
+                </Typography>
+              </div>
+              <img
+                width={64}
+                alt={testimonial.occupation}
+                className={css({ opacity: 0.3 })}
+                src={isDarkMode ? whiteLogos[index] : darkLogos[index]}
+                style={{ marginLeft: "auto" }}
+              />
+            </Box>
           </Card>
         ))}
       </Box>

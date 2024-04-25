@@ -1,9 +1,9 @@
 "use client";
 
+import Box from "@pigment-css/react/Box";
 import { css, styled } from "@/lib/styled";
 import { Container } from "./components/Container";
 import { Typography } from "./components/Typography";
-import Box from "@pigment-css/react/Box";
 import { Card } from "./components/Card";
 import { Stack } from "./components/Stack";
 import { Button } from "./components/Button";
@@ -55,9 +55,12 @@ const FeatureCard = styled(Button, {
     return propName !== "isSelected";
   },
 })<{ isSelected?: boolean }>(({ theme }) => ({
-  borderRadius: "12px",
-  padding: 24,
   height: "auto",
+  padding: theme.spacing(2),
+  flexDirection: "column",
+  alignItems: "start",
+  gap: theme.spacing(0.5),
+  borderRadius: theme.vars.shape.borderRadius,
   variants: [
     {
       props: {
@@ -67,7 +70,7 @@ const FeatureCard = styled(Button, {
         borderColor: theme.vars.palette.primary.light,
         backgroundColor: "hsla(210, 100%, 80%, 0.2)",
         ...theme.applyStyles("dark", {
-          backgroundColor: "hsla(210, 100%, 16%, 0.2)",
+          backgroundColor: "hsla(210, 100%, 15%, 0.5)",
         }),
       },
     },
@@ -80,10 +83,9 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
     <Container
       id="features"
       sx={{
-        gap: 6,
         alignItems: "stretch",
         flexDirection: { xs: "column", sm: "row" },
-        py: { xs: 8, sm: 16 },
+        gap: 6,
       }}
     >
       <Box className={rowItem}>
@@ -95,11 +97,10 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
           color="secondary"
           sx={{ mb: { xs: 2, sm: 4 } }}
         >
-          Provide a brief overview of the key features of the product. For
-          example, you could list the number of features, their types or
-          benefits, and add-ons.
+          An overview of the key features of the product. For example, you could
+          list the number of features, their types or benefits, and add-ons.
         </Typography>
-        <Stack sx={{ display: "flex", gap: 2 }}>
+        <Stack sx={{ gap: 2 }}>
           {items.map((item, index) => (
             <FeatureCard
               isSelected={selectedIndex === index}
@@ -108,58 +109,42 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
               key={item.title}
               onClick={() => setSelectedIndex(index)}
             >
-              <Box
-                sx={{
-                  width: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 0.5,
-                }}
-              >
-                <Typography variant="body1" color="primary">
-                  {item.title}
-                </Typography>
-                <Typography variant="body2" color="secondary">
-                  {item.description}
-                </Typography>
-                <div>
-                  <Link
-                    color="primary"
-                    href="//mui.com"
-                    target="_blank"
-                    // @ts-expect-error
-                    sx={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      "& > svg": { transition: "0.2s" },
-                      "&:hover > svg": { transform: "translateX(2px)" },
-                    }}
-                  >
-                    <span>Learn more</span>
-                  </Link>
-                </div>
-              </Box>
+              <Typography variant="body2" color="primary">
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="secondary">
+                {item.description}
+              </Typography>
+              <div>
+                <Link
+                  color="primary"
+                  href="//mui.com"
+                  target="_blank"
+                  // @ts-expect-error
+                  sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    "& > svg": { transition: "0.2s" },
+                    "&:hover > svg": { transform: "translateX(2px)" },
+                  }}
+                >
+                  <span>Learn more</span>
+                </Link>
+              </div>
             </FeatureCard>
           ))}
         </Stack>
       </Box>
-      <Box
-        className={`${rowItem} ${css(({ theme }) => ({
-          border: "1px solid",
-          borderColor: "hsl(220, 35%, 88%)",
-          borderRadius: "var(--shape-borderRadius)",
-          ...theme.applyStyles("dark", {
-            borderColor: "hsla(220, 25%, 25%, 0.4)",
-          }),
-        }))}`}
-      >
-        <Card
+      <Card className={`${rowItem}`}>
+        <Box
           sx={{
-            borderRadius: "var(--shape-borderRadius)",
-            backgroundSize: "contain",
             m: "auto",
-            width: 420,
             height: 500,
+            width: "100%",
+            alignSelf: "center",
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
           style={{
             backgroundImage: isDarkMode
@@ -167,7 +152,7 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
               : items[selectedIndex].imageLight,
           }}
         />
-      </Box>
+      </Card>
     </Container>
   );
 }

@@ -1,8 +1,7 @@
 import Box from "@pigment-css/react/Box";
-import { styled } from "@/lib/styled";
+import { Card } from "./components/Card";
 import { Container } from "@/landing-page/components/Container";
 import { Typography } from "@/landing-page/components/Typography";
-import { Stack } from "./components/Stack";
 import {
   AutoFixHighRoundedIcon,
   ConstructionRoundedIcon,
@@ -51,18 +50,6 @@ const items = [
   },
 ];
 
-const Card = styled.div(({ theme }) => ({
-  padding: theme.spacing(2),
-  position: "relative",
-  display: "flex",
-  alignItems: "start",
-  justifyContent: "space-between",
-  borderRadius: theme.vars.shape.borderRadius,
-  backgroundColor: theme.vars.palette.background.lvl2,
-  border: `1px solid ${theme.vars.palette.divider}`,
-  ...theme.applyStyles("dark", {}),
-}));
-
 export function Highlights() {
   return (
     <Container id="highlights">
@@ -91,33 +78,23 @@ export function Highlights() {
         {items.map((item) => {
           const Icon = item.icon;
           return (
-            <Card key={item.title}>
-              <Stack
-                direction="column"
-                sx={{
-                  height: "100%",
-                  justifyContent: "space-between",
-                  padding: 1,
-                }}
-              >
-                <Stack sx={{ gap: 0.5 }}>
-                  {Icon ? (
-                    <Box sx={{ pb: 1 }}>
-                      <Icon
-                        height={24}
-                        width={24}
-                        style={{ fill: "var(--palette-text-primary)" }}
-                      />
-                    </Box>
-                  ) : null}
-                  <Typography variant="body1" color="primary">
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body2" color="secondary">
-                    {item.description}
-                  </Typography>
-                </Stack>
-              </Stack>
+            <Card
+              key={item.title}
+              sx={({ theme }) => ({
+                backgroundColor: theme.vars.palette.background.lvl2,
+              })}
+            >
+              <Icon
+                height={24}
+                width={24}
+                style={{ fill: "var(--palette-text-primary)" }}
+              />
+              <Typography variant="body1" color="primary" sx={{ mt: 1.5 }}>
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="secondary">
+                {item.description}
+              </Typography>
             </Card>
           );
         })}
