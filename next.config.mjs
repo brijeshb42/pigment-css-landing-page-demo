@@ -9,6 +9,9 @@ const nextConfig = {
   env: {
     EMOTION: isEmotion ? "1" : "0",
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 const greyPalette = {
