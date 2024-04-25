@@ -16,6 +16,9 @@ const HeaderWrapper = styled.header(({ theme }) => ({
     // Prevent the app bar to be visible on each printed page.
     position: "absolute",
   },
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(2),
+  },
 }));
 
 const Toolbar = styled.nav(({ theme }) => ({
@@ -46,7 +49,7 @@ const NavItem = styled.a(({ theme }) => ({
   alignItems: "center",
   borderRadius: "999px",
   border: "1px solid transparent",
-  color: theme.vars.palette.grey[700],
+  color: theme.vars.palette.text.primary,
   transition: "all 80ms ease-in",
   textDecoration: "none",
   "&:hover": {
@@ -54,7 +57,6 @@ const NavItem = styled.a(({ theme }) => ({
     borderColor: theme.vars.palette.divider,
   },
   ...theme.applyStyles("dark", {
-    color: theme.vars.palette.grey[200],
     "&:hover": {
       backgroundColor: theme.vars.palette.grey[800],
     },
@@ -91,7 +93,6 @@ document.addEventListener('click', (ev) => {
       />
       <Toolbar>
         <Box
-          as="div"
           sx={{
             flexGrow: 1,
             display: "flex",

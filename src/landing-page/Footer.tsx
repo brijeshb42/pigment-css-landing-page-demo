@@ -26,10 +26,10 @@ export function Footer() {
       >
         <Box
           sx={{
+            minWidth: { xs: "100%", sm: "60%" },
             display: "flex",
             flexDirection: "column",
             gap: 4,
-            minWidth: { xs: "100%", sm: "60%" },
           }}
         >
           <Box sx={{ width: { xs: "100%", sm: "60%" } }}>
@@ -40,8 +40,14 @@ export function Footer() {
             <Typography variant="body2" color="secondary" sx={{ mb: 2 }}>
               Subscribe for weekly updates. No spams ever!
             </Typography>
-            <Stack direction="row" sx={{ gap: 1, alignItems: "end" }}>
-              <Stack direction="column" sx={{}}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              sx={{ gap: 1, alignItems: { xs: "start", sm: "end" } }}
+            >
+              <Stack
+                direction="column"
+                sx={{ width: { xs: "100%", sm: "fit-content" } }}
+              >
                 <Typography
                   as="label"
                   htmlFor="email-newsletter"
@@ -56,9 +62,15 @@ export function Footer() {
                   autoComplete="off"
                   aria-label="Enter your email address"
                   placeholder="Your email address"
+                  sx={{ width: { xs: "100%", sm: "fit-content" } }}
                 />
               </Stack>
-              <Button variant="contained" color="primary" size="large">
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                sx={{ width: { xs: "100%", sm: "fit-content" } }}
+              >
                 Subscribe
               </Button>
             </Stack>
@@ -131,6 +143,7 @@ export function Footer() {
           pt: 4,
           width: "100%",
           display: "flex",
+          flexDirection: { xs: "column", sm: "row" },
           justifyContent: "space-between",
         }}
       >

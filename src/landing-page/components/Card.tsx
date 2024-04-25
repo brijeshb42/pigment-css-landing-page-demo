@@ -1,6 +1,7 @@
 import { styled } from "@/lib/styled";
 
 export const Card = styled("div")(({ theme }) => ({
+  boxSizing: "border-box",
   padding: theme.spacing(2),
   color: (theme.vars || theme).palette.text.primary,
   backgroundColor: (theme.vars || theme).palette.background.paper,

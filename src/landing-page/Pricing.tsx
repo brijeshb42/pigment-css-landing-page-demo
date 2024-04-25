@@ -78,7 +78,7 @@ function TierCard({
         gap: theme.spacing(2),
         borderRadius: theme.shape.borderRadius,
         [theme.breakpoints.down("sm")]: {
-          width: "85%",
+          width: "100%",
         },
       }))} ${
         title === "Professional" &&
@@ -167,6 +167,7 @@ export function Pricing() {
         sx={{
           width: { sm: "100%", md: "60%" },
           textAlign: { sm: "left", md: "center" },
+          mb: { xs: 3, sm: 2 },
         }}
       >
         <Typography as="h2" variant="h4">
@@ -179,16 +180,12 @@ export function Pricing() {
       </Box>
       <Box
         sx={{
+          width: "100%",
           display: "flex",
           flexDirection: { xs: "column", sm: "column", md: "row" },
-          gap: 2,
-          width: "100%",
           alignItems: "center",
           justifyContent: "center",
-          paddingInline: {
-            xs: 2,
-            sm: 0,
-          },
+          gap: 2,
         }}
       >
         {tiers.map((tier) => (

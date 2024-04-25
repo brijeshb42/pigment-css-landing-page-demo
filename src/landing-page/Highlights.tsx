@@ -57,6 +57,7 @@ export function Highlights() {
         sx={{
           width: { sm: "100%", md: "60%" },
           textAlign: { sm: "left", md: "center" },
+          mb: { xs: 3, sm: 2 },
         }}
       >
         <Typography as="h2" variant="h4">
@@ -71,7 +72,10 @@ export function Highlights() {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+          gridTemplateColumns: {
+            xs: "repeat(1, minmax(0, 1fr))",
+            sm: "repeat(3, minmax(0, 1fr))",
+          },
           gap: 2,
         }}
       >

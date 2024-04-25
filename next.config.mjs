@@ -48,8 +48,8 @@ const darkModeColorTokens = {
     lvl2: "hsl(220, 30%, 5%, 0.8)",
   },
   text: {
-    primary: "hsl(220, 100%, 100%)",
-    secondary: "hsl(220, 20%, 65%)",
+    primary: "hsl(220, 400%, 100%)",
+    secondary: "hsl(220, 40%, 75%)",
     disabled: "rgba(255, 255, 255, 0.5)",
     icon: "rgba(255, 255, 255, 0.5)",
   },
@@ -80,8 +80,8 @@ const lightModeColorTokens = {
     lvl2: "hsl(220, 30%, 96%, 0.4)",
   },
   text: {
-    primary: "hsl(220, 25%, 10%)",
-    secondary: "hsl(220, 25%, 35%)",
+    primary: "hsl(220, 40%, 10%)",
+    secondary: "hsl(220, 40%, 25%)",
     disabled: "rgba(0, 0, 0, 0.38)",
   },
   common: {
@@ -117,14 +117,14 @@ const theme = extendTheme({
     fontWeightBold: "700",
     h1: {
       fontFamily: fontFamily,
-      fontSize: "clamp(2.5rem, 1.125rem + 3.5vw, 3.5em)",
+      fontSize: "clamp(2.2rem, 1.125rem + 3.5vw, 3.5rem)",
       fontWeight: 500,
       lineHeight: 1.2,
       letterSpacing: -0.2,
     },
     h2: {
       fontFamily: fontFamily,
-      fontSize: "3rem",
+      fontSize: "clamp(1.75rem, 1rem + 3vw, 3rem)",
       fontWeight: 500,
       lineHeight: 1.2,
       letterSpacing: -0.2,
@@ -132,14 +132,14 @@ const theme = extendTheme({
     },
     h3: {
       fontFamily: fontFamily,
-      fontSize: "2.25rem",
+      fontSize: "clamp(1.5rem, 1rem + 2.25vw, 2.25rem)",
       fontWeight: 500,
       lineHeight: 1.2,
       letterSpacing: 0.2,
     },
     h4: {
       fontFamily: fontFamily,
-      fontSize: "2.25rem",
+      fontSize: "clamp(1.2rem, 1rem + 2.1vw, 2.1rem)",
       fontWeight: 500,
       lineHeight: 1.5,
       letterSpacing: 0.2,

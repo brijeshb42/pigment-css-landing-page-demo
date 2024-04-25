@@ -34,20 +34,21 @@ const HeroWrapper = styled.section(({ theme }) => ({
 const StyledImg = styled("img")(({ theme }) => ({
   alignSelf: "center",
   width: "100%",
-  height: 400,
-  marginTop: theme.spacing(8),
+  height: 280,
+  marginTop: theme.spacing(2),
   borderRadius: theme.shape.borderRadius,
   boxShadow: "0 0 24px hsl(220, 100%, 95%)",
   border: `1px solid ${theme.vars.palette.divider}`,
   backgroundSize: "cover",
   objectFit: "cover",
-  objectPosition: "top",
+  objectPosition: "left top",
   ...theme.applyStyles("dark", {
     boxShadow: "0 0 24px hsl(220, 100%, 35%, 0.2)",
   }),
   [theme.breakpoints.up("sm")]: {
-    marginTop: theme.spacing(10),
     height: 600,
+    objectPosition: "top",
+    marginTop: theme.spacing(10),
   },
 }));
 
@@ -57,20 +58,20 @@ export function Hero() {
     <HeroWrapper
       id="hero"
       sx={{
-        pt: { xs: 14, sm: 20 },
-        pb: { xs: 8, sm: 12 },
+        pt: { xs: 12, sm: 20 },
+        pb: { xs: 4, sm: 12 },
       }}
     >
       <Box
         sx={{
           boxSizing: "border-box",
-          p: 4,
+          p: { xs: 2, sm: 4 },
           maxWidth: 1200,
           width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 2.5,
+          gap: { xs: 2, sm: 2.5 },
         }}
       >
         <Typography
@@ -78,11 +79,13 @@ export function Hero() {
           color="primary"
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
+            flexWrap: "wrap",
             alignItems: "center",
+            justifyContent: "center",
+            gap: { xs: 0.5, sm: 1 },
           }}
         >
-          The&nbsp;
+          The
           <Box
             as="span"
             sx={({ theme }) => ({
@@ -95,12 +98,12 @@ export function Hero() {
           >
             best&nbsp;product
           </Box>
-          &nbsp;release
+          release
         </Typography>
         <Typography
           variant="body1"
           color="secondary"
-          sx={{ maxWidth: 750, textAlign: { sm: "left", md: "center" } }}
+          sx={{ maxWidth: 750, textAlign: "center" }}
         >
           Explore our cutting-edge dashboard, delivering high-quality solutions
           tailored to your needs. Elevate your experience with top-tier features
@@ -110,8 +113,10 @@ export function Hero() {
           as="form"
           action="#"
           sx={{
+            width: "100%",
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             flexDirection: { xs: "column", sm: "row" },
             gap: 1,
           }}
@@ -136,12 +141,23 @@ export function Hero() {
             autoComplete="off"
             aria-label="Enter your email address"
             placeholder="Your email address"
+            sx={{ width: { xs: "100%", sm: "fit-content" } }}
           />
-          <Button size="large" variant="contained" type="button">
+          <Button
+            type="button"
+            size="large"
+            variant="contained"
+            sx={{ width: { xs: "100%", sm: "fit-content" } }}
+          >
             Start now
           </Button>
         </Box>
-        <Typography variant="caption" color="secondary" fontWeight="medium">
+        <Typography
+          variant="caption"
+          color="secondary"
+          fontWeight="medium"
+          sx={{ textAlign: "center" }}
+        >
           By clicking &quot;Start now&quot; you agree to our&nbsp;
           <Link href="#">Terms & Conditions</Link>.
         </Typography>

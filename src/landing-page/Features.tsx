@@ -85,7 +85,7 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
       sx={{
         alignItems: "stretch",
         flexDirection: { xs: "column", sm: "row" },
-        gap: 6,
+        gap: { xs: 2, sm: 6 },
       }}
     >
       <Box className={rowItem}>
@@ -135,11 +135,11 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
           ))}
         </Stack>
       </Box>
-      <Card className={`${rowItem}`}>
+      <Card className={rowItem}>
         <Box
           sx={{
             m: "auto",
-            height: 500,
+            height: { xs: 300, sm: 500 },
             width: "100%",
             alignSelf: "center",
             backgroundSize: "contain",

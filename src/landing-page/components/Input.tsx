@@ -2,6 +2,7 @@ import { styled } from "@/lib/styled";
 
 export const Input = styled.input(({ theme }) => ({
   all: "unset",
+  boxSizing: "border-box",
   position: "relative",
   borderRadius: "999px",
   height: theme.spacing(5),
