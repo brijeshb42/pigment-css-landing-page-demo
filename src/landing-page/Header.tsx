@@ -99,7 +99,9 @@ document.addEventListener('click', (ev) => {
             gap: 1,
           }}
         >
-          <Sitemark />
+          <a href="/">
+            <Sitemark />
+          </a>
           <Box as="nav" sx={{ display: { xs: "none", md: "flex" } }}>
             <NavItem className="nav-item" href="#features">
               Features
