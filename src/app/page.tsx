@@ -10,7 +10,11 @@ import { Features } from "@/landing-page/Features";
 import { Highlights } from "@/landing-page/Highlights";
 import Perf from "@/landing-page/components/Perf";
 
-export default function Home() {
+export default function Home({
+  searchParams,
+}: {
+  searchParams: Record<string, string>;
+}) {
   const isDarkMode = (cookies().get("theme")?.value || "dark") === "dark";
   return (
     <main>
@@ -26,7 +30,7 @@ export default function Home() {
       <Pricing />
       <Divider />
       <Footer />
-      <Perf />
+      {searchParams.metric === "1" && <Perf />}
     </main>
   );
 }
