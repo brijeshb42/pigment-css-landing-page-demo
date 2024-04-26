@@ -113,4 +113,4 @@ export function css(...args: CssArg[]) {
   );
   return baseCss(...newArgs);
 }
-export { styled } from "@pigment-css/react";
+export { styled, keyframes } from "@pigment-css/react";

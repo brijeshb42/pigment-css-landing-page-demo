@@ -23,6 +23,7 @@ export function ToggleThemeButton() {
         variant="plain"
         size="medium"
         sx={{ width: 32 }}
+        title="Toggle Theme"
       >
         {currentTheme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
       </Button>

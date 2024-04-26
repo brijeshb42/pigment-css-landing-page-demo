@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+
 import { Header } from "@/landing-page/Header";
 import { Hero } from "@/landing-page/Hero";
 import { Testimonials } from "@/landing-page/Testimonials";
@@ -7,6 +8,7 @@ import { Divider } from "@/landing-page/components/Divider";
 import { Footer } from "@/landing-page/Footer";
 import { Features } from "@/landing-page/Features";
 import { Highlights } from "@/landing-page/Highlights";
+import Perf from "@/landing-page/components/Perf";
 
 export default function Home() {
   const isDarkMode = (cookies().get("theme")?.value || "dark") === "dark";
@@ -24,6 +26,7 @@ export default function Home() {
       <Pricing />
       <Divider />
       <Footer />
+      <Perf />
     </main>
   );
 }
