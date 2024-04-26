@@ -23,7 +23,7 @@ export const Typography = styled("p", {
           variant: key,
         },
         // @ts-expect-error
-        style: theme.typography[key],
+        style: theme.vars.typography[key],
       })),
     {
       props: {
