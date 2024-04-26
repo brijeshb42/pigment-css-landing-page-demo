@@ -37,6 +37,7 @@ export const Button = styled("button", {
       style: {
         height: theme.spacing(4),
         padding: theme.spacing(1.2),
+        paddingBottom: theme.spacing(1.4), // optical alignment
       },
     },
     {
@@ -44,6 +45,7 @@ export const Button = styled("button", {
       style: {
         height: theme.spacing(5),
         padding: theme.spacing(1.5),
+        paddingBottom: theme.spacing(1.7), // optical alignment
       },
     },
     {

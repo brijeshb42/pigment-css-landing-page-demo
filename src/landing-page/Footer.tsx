@@ -10,6 +10,7 @@ import { Link } from "./components/Link";
 import { Divider } from "./components/Divider";
 
 const WrappedLink = styled(Link)<{ variant?: string }>(({ theme }) => ({
+  ...theme.typography.body2,
   color: theme.vars.palette.text.secondary,
 }));
 
@@ -34,7 +35,11 @@ export function Footer() {
         >
           <Box sx={{ width: { xs: "100%", sm: "60%" } }}>
             <SitemarkIcon />
-            <Typography variant="body2" sx={{ mt: 2, mb: 1 }}>
+            <Typography
+              variant="body2"
+              fontWeight="semibold"
+              sx={{ mt: 2, mb: 0.5 }}
+            >
               Join the newsletter
             </Typography>
             <Typography variant="body2" color="secondary" sx={{ mb: 2 }}>
@@ -56,6 +61,7 @@ export function Footer() {
                   htmlFor="email-newsletter"
                   variant="body2"
                   color="secondary"
+                  fontWeight="medium"
                   sx={{ mb: 0.5 }}
                 >
                   Your email:
@@ -86,22 +92,22 @@ export function Footer() {
             gap: 1,
           }}
         >
-          <Typography variant="body1" fontWeight="medium">
+          <Typography variant="body2" fontWeight="semibold">
             Product
           </Typography>
-          <Link variant="h1" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             Features
-          </Link>
-          <WrappedLink variant="body2" href="#">
+          </WrappedLink>
+          <WrappedLink fontWeight="medium" href="#">
             Testimonials
           </WrappedLink>
-          <WrappedLink variant="body2" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             Highlights
           </WrappedLink>
-          <WrappedLink variant="body2" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             Pricing
           </WrappedLink>
-          <WrappedLink variant="body2" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             FAQs
           </WrappedLink>
         </Box>
@@ -112,16 +118,16 @@ export function Footer() {
             gap: 1,
           }}
         >
-          <Typography variant="body2" fontWeight="medium">
+          <Typography variant="body2" fontWeight="semibold">
             Company
           </Typography>
-          <WrappedLink variant="body2" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             About us
           </WrappedLink>
-          <WrappedLink variant="body2" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             Careers
           </WrappedLink>
-          <WrappedLink variant="body2" href="#">
+          <WrappedLink fontWeight="medium" href="#">
             Press
           </WrappedLink>
         </Box>
@@ -132,12 +138,18 @@ export function Footer() {
             gap: 1,
           }}
         >
-          <Typography variant="body2" sx={{ fontWeight: "500" }}>
+          <Typography variant="body2" fontWeight="semibold">
             Legal
           </Typography>
-          <WrappedLink href="#">Terms</WrappedLink>
-          <WrappedLink href="#">Privacy</WrappedLink>
-          <WrappedLink href="#">Contact</WrappedLink>
+          <WrappedLink fontWeight="medium" href="#">
+            Terms
+          </WrappedLink>
+          <WrappedLink fontWeight="medium" href="#">
+            Privacy
+          </WrappedLink>
+          <WrappedLink fontWeight="medium" href="#">
+            Contact
+          </WrappedLink>
         </Box>
       </Box>
       <Divider sx={{ my: 2 }} />

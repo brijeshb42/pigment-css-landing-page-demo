@@ -46,7 +46,7 @@ const items = [
     icon: QueryStatsRoundedIcon,
     title: "Precision in every detail",
     description:
-      "Enjoy a meticulously crafted product where small touches make a significant impact on your overall experience.",
+      "Enjoy a meticulously crafted product where details make a significant impact on your overall experience.",
   },
 ];
 
@@ -93,7 +93,12 @@ export function Highlights() {
                 width={24}
                 style={{ fill: "var(--palette-text-primary)" }}
               />
-              <Typography variant="body1" color="primary" sx={{ mt: 1.5 }}>
+              <Typography
+                variant="body2"
+                color="primary"
+                fontWeight="semibold"
+                sx={{ mt: 1.5, mb: 0.5 }}
+              >
                 {item.title}
               </Typography>
               <Typography variant="body2" color="secondary">

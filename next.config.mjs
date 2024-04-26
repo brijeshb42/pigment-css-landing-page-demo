@@ -48,7 +48,7 @@ const darkModeColorTokens = {
     lvl2: "hsl(220, 30%, 5%, 0.8)",
   },
   text: {
-    primary: "hsl(220, 400%, 100%)",
+    primary: "hsl(220, 40%, 100%)",
     secondary: "hsl(220, 40%, 75%)",
     disabled: "rgba(255, 255, 255, 0.5)",
     icon: "rgba(255, 255, 255, 0.5)",

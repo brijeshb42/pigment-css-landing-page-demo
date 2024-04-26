@@ -103,7 +103,7 @@ export function Testimonials() {
         {userTestimonials.map((testimonial, index) => (
           <Card key={index} sx={{ display: "flex", flexDirection: "column" }}>
             <Typography variant="body2" color="secondary" sx={{ mb: 2 }}>
-              {testimonial.testimonial}
+              &#8220;{testimonial.testimonial}&#8221;
             </Typography>
             <Box sx={{ display: "flex", gap: 2, mt: "auto" }}>
               <img
@@ -116,10 +116,14 @@ export function Testimonials() {
                 })}
               />
               <div>
-                <Typography variant="body2" fontWeight="medium">
+                <Typography variant="body2" fontWeight="semibold">
                   {testimonial.name}
                 </Typography>
-                <Typography variant="body2" color="secondary">
+                <Typography
+                  variant="caption"
+                  color="secondary"
+                  fontWeight="regular"
+                >
                   {testimonial.occupation}
                 </Typography>
               </div>

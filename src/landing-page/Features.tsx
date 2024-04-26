@@ -109,17 +109,15 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
               key={item.title}
               onClick={() => setSelectedIndex(index)}
             >
-              <Typography fontWeight="medium" variant="body2" color="primary">
+              <Typography fontWeight="semibold" variant="body2" color="primary">
                 {item.title}
               </Typography>
-              <Typography variant="body2" color="secondary">
+              <Typography variant="body2" color="secondary" sx={{ mb: 0.5 }}>
                 {item.description}
               </Typography>
-              <div>
-                <Link color="primary" href="/">
-                  Learn more
-                </Link>
-              </div>
+              <Link color="primary" href="/">
+                Learn more
+              </Link>
             </FeatureCard>
           ))}
         </Stack>

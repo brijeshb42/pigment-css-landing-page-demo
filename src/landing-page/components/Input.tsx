@@ -12,6 +12,9 @@ export const Input = styled.input(({ theme }) => ({
   transition: "all 80ms ease-in",
   fontSize: "1rem",
   backgroundColor: "#FFF",
+  "&:placeholder": {
+    color: theme.vars.palette.text.secondary,
+  },
   "&:hover": {
     backgroundColor: theme.vars.palette.grey[50],
   },
