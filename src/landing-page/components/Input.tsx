@@ -17,7 +17,7 @@ export const Input = styled.input(({ theme }) => ({
   },
   "&:focus": {
     outlineOffset: 2,
-    borderColor: (theme.vars || theme).palette.primary.main,
+    borderColor: theme.vars.palette.primary.main,
     outline: `3px solid ${theme.vars.palette.primary.main}`,
   },
   ...theme.applyStyles("dark", {
@@ -26,8 +26,8 @@ export const Input = styled.input(({ theme }) => ({
       backgroundColor: theme.vars.palette.grey[800],
     },
     "&:focus": {
-      borderColor: (theme.vars || theme).palette.primary.main,
-      outlineColor: (theme.vars || theme).palette.primary.main,
+      borderColor: theme.vars.palette.primary.main,
+      outlineColor: theme.vars.palette.primary.main,
     },
   }),
 }));

@@ -18,6 +18,10 @@ interface CustomTheme {
     caption: CSSObject;
     overline: CSSObject;
     fontFamily: string;
+    fontWeightRegular: string;
+    fontWeightMedium: string;
+    fontWeightSemiBold: string;
+    fontWeightBold: string;
     pxToRem(pixels: number): string;
   };
   zIndex: {
@@ -48,6 +52,7 @@ interface CustomTheme {
     text: {
       secondary: string;
       primary: string;
+      disabled: string;
       primaryChannel: string;
     };
     background: {

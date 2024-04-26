@@ -109,7 +109,7 @@ export function Features({ isDarkMode }: { isDarkMode?: boolean }) {
               key={item.title}
               onClick={() => setSelectedIndex(index)}
             >
-              <Typography variant="body2" color="primary">
+              <Typography fontWeight="medium" variant="body2" color="primary">
                 {item.title}
               </Typography>
               <Typography variant="body2" color="secondary">

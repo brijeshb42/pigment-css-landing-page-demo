@@ -31,7 +31,7 @@ const AvatarRoot = styled("div", {
     {
       props: { variant: "rounded" },
       style: {
-        borderRadius: (theme.vars || theme).shape.borderRadius,
+        borderRadius: theme.vars.shape.borderRadius,
       },
     },
     {
@@ -43,7 +43,7 @@ const AvatarRoot = styled("div", {
     {
       props: { colorDefault: true },
       style: {
-        color: (theme.vars || theme).palette.background.default,
+        color: theme.vars.palette.background.default,
         backgroundColor: (theme.vars ?? theme).palette.grey[400],
         ...theme.applyStyles("dark", {
           backgroundColor: (theme.vars ?? theme).palette.grey[600],
