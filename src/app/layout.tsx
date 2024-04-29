@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Emotion Demo",
+  title: "Pigment CSS Demo",
   description:
     "A demo that showcases how to style your app with Pigment CSS in multiple ways.",
 };
