@@ -19,7 +19,8 @@ const perfClass = css({
   padding: 2,
   border: "1px solid var(--palette-divider)",
   width: 250,
-  height: 100,
+  minHeight: 100,
+  maxHeight: 400,
   overflow: "auto",
   backgroundColor: "var(--palette-background-plain)",
 });
@@ -87,8 +88,8 @@ export default function Perf() {
           </Tr>
         </thead>
         <tbody>
-          {metrices.map((metric) => (
-            <Tr>
+          {metrices.map((metric, index) => (
+            <Tr key={index}>
               <Tcell as="td">{metric.name}</Tcell>
               <Tcell as="td">{metric.value.toFixed(3)}</Tcell>
               <Tcell as="td">{metric.rating}</Tcell>
