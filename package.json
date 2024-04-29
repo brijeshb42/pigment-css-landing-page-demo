@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "ANALYZE=1 next build",
     "start": "next start",
-    "lint": "next lint",
-    "build:emotion": "EMOTION=1 next build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@mui/material": "^5.15.15",
+    "@next/bundle-analyzer": "^14.2.3",
     "@pigment-css/nextjs-plugin": "0.0.9",
     "@types/node": "^20",
     "@types/react": "^18",

@@ -18,7 +18,7 @@ const perfClass = css({
   right: 0,
   padding: 2,
   border: "1px solid var(--palette-divider)",
-  width: 250,
+  maxWidth: 400,
   minHeight: 100,
   maxHeight: 400,
   overflow: "auto",
@@ -39,6 +39,21 @@ const Tcell = styled.th(({ theme }) => ({
   textAlign: "center",
   borderBottom: `1px solid ${theme.vars.palette.divider}`,
 }));
+
+const STATIC_DATA = [
+  {
+    name: "First Load JS",
+    value: "102 kB",
+  },
+  {
+    name: "HTML Size",
+    value: "15.0 kB",
+  },
+  {
+    name: "CSS File Size",
+    value: "6.6 kB",
+  },
+];
 
 export default function Perf() {
   const [metrices, setMetrices] = React.useState<Metric[]>([]);
@@ -88,6 +103,13 @@ export default function Perf() {
           </Tr>
         </thead>
         <tbody>
+          {STATIC_DATA.map((metric, index) => (
+            <Tr key={index}>
+              <Tcell as="td">{metric.name}</Tcell>
+              <Tcell as="td">{metric.value}</Tcell>
+              <Tcell as="td">-</Tcell>
+            </Tr>
+          ))}
           {metrices.map((metric, index) => (
             <Tr key={index}>
               <Tcell as="td">{metric.name}</Tcell>

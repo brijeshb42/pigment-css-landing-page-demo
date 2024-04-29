@@ -1,14 +1,10 @@
+import withBundleAnalyzer from "@next/bundle-analyzer";
 import { createRequire } from "module";
 import { withPigment, extendTheme } from "@pigment-css/nextjs-plugin";
 import { createBreakpoints } from "@mui/system";
 
-const isEmotion = process.env.EMOTION === "1";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    EMOTION: isEmotion ? "1" : "0",
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -246,7 +242,11 @@ const pigmentConfig = {
   },
 };
 
-// This doesn't work yet
-const exp = isEmotion ? nextConfig : withPigment(nextConfig, pigmentConfig);
+const exp = withPigment(nextConfig, pigmentConfig);
 
-export default exp;
+export default process.env.ANALYZE === "1"
+  ? withBundleAnalyzer({
+      enabled: true,
+      analyzerMode: "json",
+    })(exp)
+  : exp;
