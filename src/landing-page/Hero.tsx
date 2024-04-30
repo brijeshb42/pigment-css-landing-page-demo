@@ -161,14 +161,24 @@ export function Hero() {
           By clicking &quot;Start now&quot; you agree to our&nbsp;
           <Link href="#">Terms & Conditions</Link>.
         </Typography>
-        <StyledImg
-          alt="Product UI"
-          src={
-            isDarkMode
-              ? "/static/images/templates/templates-images/hero-dark.jpg"
-              : "/static/images/templates/templates-images/hero-light.png"
-          }
-        />
+        <picture>
+          <source
+            srcSet={
+              isDarkMode
+                ? "/static/images/templates/templates-images/hero-dark.webp"
+                : "/static/images/templates/templates-images/hero-light.webp"
+            }
+            type="image/webp"
+          />
+          <StyledImg
+            alt="Product UI"
+            src={
+              isDarkMode
+                ? "/static/images/templates/templates-images/hero-dark.jpg"
+                : "/static/images/templates/templates-images/hero-light.png"
+            }
+          />
+        </picture>
       </Box>
     </HeroWrapper>
   );
