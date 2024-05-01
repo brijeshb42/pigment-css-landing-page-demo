@@ -9,6 +9,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  reactProductionProfiling: true,
 };
 
 const greyPalette = {

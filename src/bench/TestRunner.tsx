@@ -1,7 +1,7 @@
-import React, { Profiler, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { createId } from '../bench/utils/createId';
-import { TestResults } from './TestResults';
+import React, { Profiler, useEffect } from "react";
+import { useRouter } from "next/router";
+import { createId } from "./utils/createId";
+import { TestResults } from "./TestResults";
 
 /** The localStorage object that stores our tests between runs */
 export type TestInfo = {
@@ -61,14 +61,18 @@ const TestAndRefresh = ({
 
   useEffect(() => {
     if (iterationResults.length !== testInfo.N) {
-      throw new Error(`Did not calculate N: ${testInfo.N} results (received ${iterationResults.length} results)`);
+      throw new Error(
+        `Did not calculate N: ${testInfo.N} results (received ${iterationResults.length} results)`
+      );
     }
 
     const firstIteration = iterationResults[0];
     const lastIteration = iterationResults[iterationResults.length - 1];
 
     // Build the median
-    const sortedResults = iterationResults.sort((a, b) => (Number(a) > Number(b) ? 1 : -1));
+    const sortedResults = iterationResults.sort((a, b) =>
+      Number(a) > Number(b) ? 1 : -1
+    );
     const medianIteration = sortedResults[Math.round(sortedResults.length / 2)];
 
     const fastestIteration = sortedResults[0];
@@ -110,7 +114,9 @@ const TestAndRefresh = ({
       window.location.href = `?testId=${testInfo.testId}&finished=true`;
     } else {
       // We have more sample sizes to run, +1 the sampleIndex
-      window.location.href = `?testId=${testInfo.testId}&runIndex=${runIndex + 1}`;
+      window.location.href = `?testId=${testInfo.testId}&runIndex=${
+        runIndex + 1
+      }`;
     }
   });
 
@@ -129,7 +135,11 @@ const TestAndRefresh = ({
     <>
       {loops.map((value, index) => {
         return (
-          <Profiler key={index} id={testInfo.testId} onRender={handleProfilerData}>
+          <Profiler
+            key={index}
+            id={testInfo.testId}
+            onRender={handleProfilerData}
+          >
             <TestComponent testIndex={index} />
           </Profiler>
         );
@@ -150,7 +160,7 @@ export const TestRunner = ({
   /** The N number of iterations to run inside each test */
   iterationN: number;
 }) => {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return null;
   }
 
@@ -170,9 +180,9 @@ export const TestRunner = ({
     localStorage.setItem(newTestId, JSON.stringify(testInfo));
 
     return <a href={`?testId=${newTestId}&runIndex=0`}>start test</a>;
-  } else if (typeof testId === 'string') {
+  } else if (typeof testId === "string") {
     // We are mid-test or finished with a test
-    if (typeof finished !== 'undefined') {
+    if (typeof finished !== "undefined") {
       // Test is done!
       const testInfo: TestInfo = JSON.parse(localStorage.getItem(testId));
 
@@ -181,11 +191,17 @@ export const TestRunner = ({
       // We have a test to run
 
       /** Which sample size are we doing this run? */
-      const runNumber = typeof runIndex === 'string' ? Number(runIndex) : 0;
+      const runNumber = typeof runIndex === "string" ? Number(runIndex) : 0;
       try {
         /** Grab the test info cache from storage */
         const testInfo: TestInfo = JSON.parse(localStorage.getItem(testId));
-        return <TestAndRefresh runIndex={runNumber} testInfo={testInfo} TestComponent={TestComponent} />;
+        return (
+          <TestAndRefresh
+            runIndex={runNumber}
+            testInfo={testInfo}
+            TestComponent={TestComponent}
+          />
+        );
       } catch (err) {
         console.error(err);
       }
