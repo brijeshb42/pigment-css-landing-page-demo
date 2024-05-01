@@ -5,7 +5,7 @@ export const Button = styled("button", {
     return !["color", "variant", "size", "fullWidth"].includes(propName);
   },
 })<{
-  color?: "primary";
+  color?: "primary" | "info";
   variant: "plain" | "outlined" | "contained";
   size: "medium" | "large";
   fullWidth?: boolean;
@@ -23,6 +23,7 @@ export const Button = styled("button", {
     outline: `3px solid ${theme.vars.palette.primary.main}`,
     outlineOffset: 2,
   },
+  ...theme.typography.button,
   variants: [
     ...(["primary", "info"] as const).map((colorPaletteKey) => ({
       props: {
@@ -103,5 +104,4 @@ export const Button = styled("button", {
       },
     },
   ],
-  ...theme.typography.button,
 }));
