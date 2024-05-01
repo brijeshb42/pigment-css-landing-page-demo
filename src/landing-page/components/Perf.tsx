@@ -43,11 +43,11 @@ const Tcell = styled.th(({ theme }) => ({
 const STATIC_DATA = [
   {
     name: "First Load JS",
-    value: "103 kB",
+    value: "104 kB",
   },
   {
     name: "HTML Size",
-    value: "14.9 kB",
+    value: "15.0 kB",
   },
   {
     name: "CSS File Size",
