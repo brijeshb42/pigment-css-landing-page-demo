@@ -234,7 +234,7 @@ const require = createRequire(import.meta.url);
 /** @type {import('@pigment-css/nextjs-plugin').PigmentOptions} */
 const pigmentConfig = {
   theme,
-  displayName: true,
+  displayName: process.env.NODE_ENV !== "production",
   tagResolver(source, tag) {
     if (source === "@/lib/styled") {
       return require.resolve(`@pigment-css/react/exports/${tag}`);
