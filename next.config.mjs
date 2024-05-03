@@ -9,7 +9,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
-  reactProductionProfiling: true,
+  reactProductionProfiling: process.env.NODE_ENV !== "production",
 };
 
 const greyPalette = {
